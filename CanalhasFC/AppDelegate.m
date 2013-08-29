@@ -7,15 +7,34 @@
 //
 
 #import "AppDelegate.h"
+#import "NoticiasViewController.h"
+#import "FinancasViewController.h"
+#import "StoreViewController.h"
 
 @implementation AppDelegate
+@synthesize window = _window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    NoticiasViewController *noticiasViewController = [[NoticiasViewController alloc] initWithNibName:@"NoticiasViewController" bundle:nil];
+    [noticiasViewController setTitle:@"Notícias"];
+    
+    FinancasViewController *financasViewController = [[FinancasViewController alloc] initWithNibName:@"FinancasViewController" bundle:nil];
+    [financasViewController setTitle:@"Finanças"];
+    
+    StoreViewController *storeViewController = [[StoreViewController alloc] initWithNibName:@"StoreViewController" bundle:nil];
+    [storeViewController setTitle:@"Store"];
+
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    
+    NSArray *viewControllers = [NSArray arrayWithObjects:noticiasViewController, financasViewController, storeViewController, nil];
+    [tabBarController setViewControllers:viewControllers];
+    
+    [self.window setRootViewController:tabBarController];
+    
     return YES;
 }
 
