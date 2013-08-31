@@ -20,17 +20,19 @@
     [self.window makeKeyAndVisible];
     
     NoticiasViewController *noticiasViewController = [[NoticiasViewController alloc] initWithNibName:@"NoticiasViewController" bundle:nil];
-    [noticiasViewController setTitle:@"Notícias"];
+    UINavigationController *noticiasNavigationController = [[UINavigationController alloc] initWithRootViewController:noticiasViewController];
+    
+    UITabBarItem *noticiasTabBarItem = [noticiasNavigationController tabBarItem];
+    [noticiasTabBarItem setTitle:@"Notícias"];
+    
+
     
     FinancasViewController *financasViewController = [[FinancasViewController alloc] initWithNibName:@"FinancasViewController" bundle:nil];
-    [financasViewController setTitle:@"Finanças"];
-    
     StoreViewController *storeViewController = [[StoreViewController alloc] initWithNibName:@"StoreViewController" bundle:nil];
-    [storeViewController setTitle:@"Store"];
 
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     
-    NSArray *viewControllers = [NSArray arrayWithObjects:noticiasViewController, financasViewController, storeViewController, nil];
+    NSArray *viewControllers = [NSArray arrayWithObjects:noticiasNavigationController, financasViewController, storeViewController, nil];
     [tabBarController setViewControllers:viewControllers];
     
     [self.window setRootViewController:tabBarController];

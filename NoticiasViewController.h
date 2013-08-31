@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NoticiasViewController : UINavigationController
-
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@interface NoticiasViewController : UIViewController
 
 @end
