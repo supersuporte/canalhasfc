@@ -7,8 +7,19 @@
 //
 
 #import "NoticiasViewController.h"
+#import "NoticiaUtils.h"
+#import "Conexao.h"
 
 @interface NoticiasViewController ()
+{
+    NSMutableArray *noticias;
+    
+    NSURLConnection *connection;
+    NSMutableData *jsonData;
+    
+    UIActivityIndicatorView *activityIndicator;
+    UILabel *activityIndicatorLabel;
+}
 
 @end
 
@@ -20,6 +31,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        [self pesquisaWebServices];
     }
     return self;
 }
@@ -28,6 +40,7 @@
 {
     [super viewDidLoad];
     [self setTitle:@"Notícias"];
+    [self.view setBackgroundColor:[UIColor blackColor]];
 
     [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
     
@@ -37,7 +50,96 @@
                                       UITextAttributeTextShadowColor, nil];
 
     [self.navigationController.navigationBar setTitleTextAttributes:noticiasNCTitulo];
-    [self montaResultado];
+
+
+    activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+	activityIndicator.frame = CGRectMake(40.0, 10.0, 40.0, 40.0);
+    
+    activityIndicatorLabel = [[UILabel alloc] initWithFrame:CGRectMake(80.0, 9.0, 100.0, 40.0)];
+    activityIndicatorLabel.backgroundColor = [UIColor clearColor];
+    activityIndicatorLabel.textColor = [UIColor whiteColor];
+    activityIndicatorLabel.adjustsFontSizeToFitWidth = YES;
+    activityIndicatorLabel.text = @"Carregando...";
+    
+    [self.view addSubview: activityIndicator];
+    [self.view addSubview: activityIndicatorLabel];
+    [activityIndicator stopAnimating];
+    [activityIndicatorLabel setHidden:YES];
+}
+
+- (void)pesquisaWebServices
+{
+    [activityIndicator startAnimating];
+    [activityIndicatorLabel setHidden:NO];
+    
+    NSString *url = [NSString stringWithFormat:@"http://127.0.0.17/noticias.json"];
+    
+    [self consomeWebServices:url];
+}
+
+- (void)consomeWebServices:(NSString *)url
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    jsonData = [[NSMutableData alloc] init];
+    
+    NSURL *nsurl = [NSURL URLWithString:url];
+    NSURLRequest *req = [NSURLRequest requestWithURL:nsurl];
+    
+    connection = [[NSURLConnection alloc] initWithRequest:req
+                                                 delegate:self
+                                         startImmediately:YES];
+}
+
+- (void)connection:(NSURLConnection *)conn didReceiveData:(NSData *)dados
+{
+    [jsonData appendData:dados];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)conn
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    NSError *error;
+    
+    NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                                   options:NSJSONReadingMutableContainers
+                                                                     error:&error];
+    
+    if (!error)
+    {
+        noticias = [NoticiaUtils noticiasComDicionario:jsonDictionary];
+        [self montaResultado];
+    }
+    
+    jsonData = nil;
+    connection = nil;
+    
+    [activityIndicator stopAnimating];
+    [activityIndicatorLabel setHidden:YES];
+}
+
+-(void)connection:(NSURLConnection *)conn didFailWithError:(NSError *)error
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [activityIndicator stopAnimating];
+    [activityIndicatorLabel setHidden:YES];
+    
+    connection = nil;
+    jsonData = nil;
+    
+    NSString *errorString = [NSString stringWithFormat:@"Erro de conexão: %@", [error localizedDescription]];
+    
+    Conexao *conexao = [Conexao alloc];
+    if ([conexao conexaoComInternet] && [conexao conexaoComWebServices])
+    {
+        UIAlertView * av = [[UIAlertView alloc] initWithTitle:@"Não foi possível se conectar ao servidor"
+                                                      message:errorString
+                                                     delegate:nil
+                                            cancelButtonTitle:@"Ok"
+                                            otherButtonTitles:nil];
+        [av show];
+    }
 }
 
 - (void)montaResultado
@@ -65,20 +167,20 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return [noticias count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"CellIdentifier";
+    static NSString *cellIdentifier = @"CellIdentifier";
     
-	UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
 	if(cell == nil)
     {
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier:CellIdentifier];
+                reuseIdentifier:cellIdentifier];
         
         UILabel *imagem = [[UILabel alloc] initWithFrame:CGRectMake(6, 6, 110, 78)];
         [imagem setTag:1];
@@ -108,7 +210,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

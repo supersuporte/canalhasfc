@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0719495417D8081B0082AFF1 /* Noticia.m in Sources */ = {isa = PBXBuildFile; fileRef = 0719495317D8081B0082AFF1 /* Noticia.m */; };
+		0719495717D810F40082AFF1 /* NoticiaUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0719495617D810F40082AFF1 /* NoticiaUtils.m */; };
+		0719495E17D818DE0082AFF1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0719495D17D813E70082AFF1 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0719495F17D819C70082AFF1 /* Conexao.m in Sources */ = {isa = PBXBuildFile; fileRef = 0719495A17D813360082AFF1 /* Conexao.m */; };
+		0719496117D81A840082AFF1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0719496017D81A840082AFF1 /* SystemConfiguration.framework */; };
 		071C0C1E17CFBF7C00DA4339 /* NoticiasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 071C0C1C17CFBF7C00DA4339 /* NoticiasViewController.m */; };
 		071C0C1F17CFBF7C00DA4339 /* NoticiasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071C0C1D17CFBF7C00DA4339 /* NoticiasViewController.xib */; };
 		071C0C2317CFBF9900DA4339 /* FinancasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 071C0C2117CFBF9900DA4339 /* FinancasViewController.m */; };
@@ -25,6 +30,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0719495217D8081B0082AFF1 /* Noticia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Noticia.h; sourceTree = SOURCE_ROOT; };
+		0719495317D8081B0082AFF1 /* Noticia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Noticia.m; sourceTree = SOURCE_ROOT; };
+		0719495517D810F40082AFF1 /* NoticiaUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticiaUtils.h; sourceTree = SOURCE_ROOT; };
+		0719495617D810F40082AFF1 /* NoticiaUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticiaUtils.m; sourceTree = SOURCE_ROOT; };
+		0719495917D813360082AFF1 /* Conexao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Conexao.h; sourceTree = "<group>"; };
+		0719495A17D813360082AFF1 /* Conexao.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Conexao.m; sourceTree = "<group>"; };
+		0719495C17D813E70082AFF1 /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		0719495D17D813E70082AFF1 /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		0719496017D81A840082AFF1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		071C0C1B17CFBF7C00DA4339 /* NoticiasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticiasViewController.h; sourceTree = "<group>"; };
 		071C0C1C17CFBF7C00DA4339 /* NoticiasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticiasViewController.m; sourceTree = "<group>"; };
 		071C0C1D17CFBF7C00DA4339 /* NoticiasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticiasViewController.xib; sourceTree = "<group>"; };
@@ -54,15 +68,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078E795117CC26D800BD4C53 /* UIKit.framework in Frameworks */,
 				078E795317CC26D800BD4C53 /* Foundation.framework in Frameworks */,
+				078E795117CC26D800BD4C53 /* UIKit.framework in Frameworks */,
 				078E795517CC26D800BD4C53 /* CoreGraphics.framework in Frameworks */,
+				0719496117D81A840082AFF1 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0719495817D812E80082AFF1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0719495517D810F40082AFF1 /* NoticiaUtils.h */,
+				0719495617D810F40082AFF1 /* NoticiaUtils.m */,
+				0719495917D813360082AFF1 /* Conexao.h */,
+				0719495A17D813360082AFF1 /* Conexao.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		0719495B17D813BE0082AFF1 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				0719495C17D813E70082AFF1 /* Reachability.h */,
+				0719495D17D813E70082AFF1 /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
 		078E794117CC26D800BD4C53 = {
 			isa = PBXGroup;
 			children = (
@@ -73,9 +108,12 @@
 				071C0C2117CFBF9900DA4339 /* FinancasViewController.m */,
 				071C0C2217CFBF9900DA4339 /* FinancasViewController.xib */,
 				071C0C2517CFBFAC00DA4339 /* StoreViewController.h */,
+				078E795617CC26D800BD4C53 /* Classes */,
+				0719495817D812E80082AFF1 /* Utils */,
+				0719495B17D813BE0082AFF1 /* Reachability */,
 				071C0C2617CFBFAC00DA4339 /* StoreViewController.m */,
 				071C0C2717CFBFAC00DA4339 /* StoreViewController.xib */,
-				078E795617CC26D800BD4C53 /* CanalhasFC */,
+				078E795717CC26D800BD4C53 /* Supporting Files */,
 				078E794F17CC26D800BD4C53 /* Frameworks */,
 				078E794D17CC26D800BD4C53 /* Products */,
 			);
@@ -92,6 +130,7 @@
 		078E794F17CC26D800BD4C53 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0719496017D81A840082AFF1 /* SystemConfiguration.framework */,
 				078E795017CC26D800BD4C53 /* UIKit.framework */,
 				078E795217CC26D800BD4C53 /* Foundation.framework */,
 				078E795417CC26D800BD4C53 /* CoreGraphics.framework */,
@@ -99,13 +138,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		078E795617CC26D800BD4C53 /* CanalhasFC */ = {
+		078E795617CC26D800BD4C53 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				078E795F17CC26D800BD4C53 /* AppDelegate.h */,
 				078E796017CC26D800BD4C53 /* AppDelegate.m */,
-				078E795717CC26D800BD4C53 /* Supporting Files */,
+				0719495217D8081B0082AFF1 /* Noticia.h */,
+				0719495317D8081B0082AFF1 /* Noticia.m */,
 			);
+			name = Classes;
 			path = CanalhasFC;
 			sourceTree = "<group>";
 		};
@@ -121,6 +162,7 @@
 				078E796617CC26D800BD4C53 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			path = CanalhasFC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,8 +236,12 @@
 				078E795D17CC26D800BD4C53 /* main.m in Sources */,
 				078E796117CC26D800BD4C53 /* AppDelegate.m in Sources */,
 				071C0C1E17CFBF7C00DA4339 /* NoticiasViewController.m in Sources */,
+				0719495E17D818DE0082AFF1 /* Reachability.m in Sources */,
+				0719495F17D819C70082AFF1 /* Conexao.m in Sources */,
 				071C0C2317CFBF9900DA4339 /* FinancasViewController.m in Sources */,
 				071C0C2817CFBFAC00DA4339 /* StoreViewController.m in Sources */,
+				0719495417D8081B0082AFF1 /* Noticia.m in Sources */,
+				0719495717D810F40082AFF1 /* NoticiaUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
