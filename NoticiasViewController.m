@@ -172,10 +172,8 @@
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:cellIdentifier];
         
-        UILabel *imagem = [[UILabel alloc] initWithFrame:CGRectMake(6, 6, 110, 78)];
+        UIImageView *imagem = [[UIImageView alloc] initWithFrame:CGRectMake(6, 6, 110, 78)];
         [imagem setTag:1];
-        [imagem setBackgroundColor:[UIColor grayColor]];
-        [imagem setTextAlignment:UITextAlignmentLeft];
         [cell.contentView addSubview:imagem];
 
         UILabel *texto = [[UILabel alloc] initWithFrame:CGRectMake(122, 6, 190, 78)];
@@ -188,15 +186,20 @@
         [cell.contentView addSubview:texto];
 	}
     Noticia *noticia = [noticias objectAtIndex:[indexPath row]];
-    
-    //UILabel *lbl1 = (UILabel *)[cell viewWithTag:1];
+
+    UIImageView *imgView = (UIImageView *)[cell viewWithTag:1];
+    NSURL *imgUrl = [NSURL URLWithString:[noticia imagem]];
+    NSData *imgData = [NSData dataWithContentsOfURL:imgUrl];
+    UIImage *img = [UIImage imageWithData:imgData];
+    [imgView setImage:img];
+   
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"dd/MM/yyyy"];
     
-    UILabel *lbl2 = (UILabel *)[cell viewWithTag:2];
-    [lbl2 setText:[NSString stringWithFormat:@"%@%@%@", [dateFormatter stringFromDate:[noticia data]], @" - ", [noticia titulo]]];
-    [lbl2 sizeToFit];
+    UILabel *labelTexto = (UILabel *)[cell viewWithTag:2];
+    [labelTexto setText:[NSString stringWithFormat:@"%@%@%@", [dateFormatter stringFromDate:[noticia data]], @" - ", [noticia titulo]]];
+    [labelTexto sizeToFit];
 
 	return cell;
 }
