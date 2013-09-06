@@ -9,14 +9,28 @@
 #import "NoticiasDetalhesViewController.h"
 
 @interface NoticiasDetalhesViewController ()
+{
+    Noticia *noticia;
+}
 
 @end
 
 @implementation NoticiasDetalhesViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void)viewWillAppear:(BOOL)animated
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+}
+
+- (id)initWithNoticia:(Noticia *)_noticia
+{
+    noticia = _noticia;
+    
+    self = [super initWithNibName:@"NoticiasDetalhesViewController" bundle:[NSBundle mainBundle]];
+    [self setTitle:@"Notícias"];
+    [self.view setBackgroundColor:[UIColor blackColor]];
+
+    //[self.navigationItem.backBarButtonItem setTitle:@"Voltar"];
+    
     if (self) {
         // Custom initialization
     }

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Noticia.h"
 
 @interface NoticiasDetalhesViewController : UIViewController
+
+- (id)initWithNoticia:(Noticia *)noticia;
 
 @end

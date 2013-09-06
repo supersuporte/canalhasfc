@@ -7,6 +7,7 @@
 //
 
 #import "NoticiasViewController.h"
+#import "NoticiasDetalhesViewController.h"
 #import "NoticiaUtils.h"
 #import "Noticia.h"
 #import "Conexao.h"
@@ -34,10 +35,22 @@
     }
     return self;
 }
-    
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.noticiasTableView deselectRowAtIndexPath:[self.noticiasTableView indexPathForSelectedRow] animated:YES];
+    [super viewWillAppear:YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIBarButtonItem *voltar = [[UIBarButtonItem alloc] initWithTitle:@"Voltar"
+                                                       style:UIBarButtonItemStyleDone
+                                                       target:self
+                                                       action:@selector(voltar)];
+    self.navigationItem.backBarButtonItem = voltar;
+
     [self setTitle:@"Notícias"];
     [self.view setBackgroundColor:[UIColor blackColor]];
 
@@ -210,8 +223,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIViewController *noticiasDetalhesViewController = [[UIViewController alloc] initWithNibName:@"NoticiasDetalhesViewController" bundle:nil];
+    Noticia *noticia = [noticias objectAtIndex:[indexPath row]];
+    NoticiasDetalhesViewController *noticiasDetalhesViewController = [[NoticiasDetalhesViewController alloc] initWithNoticia:noticia];
     [self.navigationController pushViewController:noticiasDetalhesViewController animated:YES];
+}
+
+- (void) voltar {
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning
