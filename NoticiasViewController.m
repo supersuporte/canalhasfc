@@ -8,6 +8,7 @@
 
 #import "NoticiasViewController.h"
 #import "NoticiaUtils.h"
+#import "Noticia.h"
 #import "Conexao.h"
 
 @interface NoticiasViewController ()
@@ -18,7 +19,6 @@
     NSMutableData *jsonData;
     
     UIActivityIndicatorView *activityIndicator;
-    UILabel *activityIndicatorLabel;
 }
 
 @end
@@ -31,7 +31,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self pesquisaWebServices];
     }
     return self;
 }
@@ -53,26 +52,19 @@
 
 
     activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-	activityIndicator.frame = CGRectMake(40.0, 10.0, 40.0, 40.0);
-    
-    activityIndicatorLabel = [[UILabel alloc] initWithFrame:CGRectMake(80.0, 9.0, 100.0, 40.0)];
-    activityIndicatorLabel.backgroundColor = [UIColor clearColor];
-    activityIndicatorLabel.textColor = [UIColor whiteColor];
-    activityIndicatorLabel.adjustsFontSizeToFitWidth = YES;
-    activityIndicatorLabel.text = @"Carregando...";
+	activityIndicator.frame = CGRectMake(140.0, 180.0, 40.0, 40.0);
     
     [self.view addSubview: activityIndicator];
-    [self.view addSubview: activityIndicatorLabel];
     [activityIndicator stopAnimating];
-    [activityIndicatorLabel setHidden:YES];
+
+    [self pesquisaWebServices];
 }
 
 - (void)pesquisaWebServices
 {
     [activityIndicator startAnimating];
-    [activityIndicatorLabel setHidden:NO];
     
-    NSString *url = [NSString stringWithFormat:@"http://127.0.0.17/noticias.json"];
+    NSString *url = [NSString stringWithFormat:@"http://127.0.0.1/canalhasNoticias.json"];
     
     [self consomeWebServices:url];
 }
@@ -116,14 +108,12 @@
     connection = nil;
     
     [activityIndicator stopAnimating];
-    [activityIndicatorLabel setHidden:YES];
 }
 
 -(void)connection:(NSURLConnection *)conn didFailWithError:(NSError *)error
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [activityIndicator stopAnimating];
-    [activityIndicatorLabel setHidden:YES];
     
     connection = nil;
     jsonData = nil;
@@ -197,11 +187,15 @@
         [texto setNumberOfLines:4];
         [cell.contentView addSubview:texto];
 	}
+    Noticia *noticia = [noticias objectAtIndex:[indexPath row]];
     
-    UILabel *lbl1 = (UILabel *)[cell viewWithTag:1];
+    //UILabel *lbl1 = (UILabel *)[cell viewWithTag:1];
 
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+    
     UILabel *lbl2 = (UILabel *)[cell viewWithTag:2];
-    [lbl2 setText:[NSString stringWithFormat:@"%@", @"01/09/2013 - Churrasco no Canalhas Arena próxima quinta."]];
+    [lbl2 setText:[NSString stringWithFormat:@"%@%@%@", [dateFormatter stringFromDate:[noticia data]], @" - ", [noticia titulo]]];
     [lbl2 sizeToFit];
 
 	return cell;
