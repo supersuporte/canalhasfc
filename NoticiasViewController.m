@@ -171,6 +171,10 @@
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:cellIdentifier];
+
+        UIImage *avImage = [UIImage imageNamed:@"setaDireita.png"];
+        UIImageView *avImageView = [[UIImageView alloc] initWithImage:avImage];
+        [cell setAccessoryView:avImageView];
         
         UIImageView *imagem = [[UIImageView alloc] initWithFrame:CGRectMake(6, 6, 110, 78)];
         [imagem setTag:1];
@@ -202,6 +206,12 @@
     [labelTexto sizeToFit];
 
 	return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIViewController *noticiasDetalhesViewController = [[UIViewController alloc] initWithNibName:@"NoticiasDetalhesViewController" bundle:nil];
+    [self.navigationController pushViewController:noticiasDetalhesViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
