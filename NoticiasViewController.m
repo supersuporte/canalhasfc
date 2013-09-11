@@ -189,11 +189,12 @@
         UIImageView *avImageView = [[UIImageView alloc] initWithImage:avImage];
         [cell setAccessoryView:avImageView];
         
-        UIImageView *imagem = [[UIImageView alloc] initWithFrame:CGRectMake(6, 6, 110, 78)];
+        UIImageView *imagem = [[UIImageView alloc] initWithFrame:CGRectMake(6, 6, 110, 80)];
         [imagem setTag:1];
         [cell.contentView addSubview:imagem];
 
-        UILabel *texto = [[UILabel alloc] initWithFrame:CGRectMake(122, 6, 190, 78)];
+
+        UILabel *texto = [[UILabel alloc] initWithFrame:CGRectMake(124, 6, 188, 78)];
         [texto setTag:2];
         [texto setBackgroundColor:[UIColor clearColor]];
         [texto setTextAlignment:UITextAlignmentLeft];
@@ -204,12 +205,19 @@
 	}
     Noticia *noticia = [noticias objectAtIndex:[indexPath row]];
 
-    UIImageView *imgView = (UIImageView *)[cell viewWithTag:1];
-    NSURL *imgUrl = [NSURL URLWithString:[noticia imagem]];
-    NSData *imgData = [NSData dataWithContentsOfURL:imgUrl];
-    UIImage *img = [UIImage imageWithData:imgData];
-    [imgView setImage:img];
-   
+    if (![[noticia imagem] isEqualToString:@""])
+    {
+        UIImageView *imgView = (UIImageView *)[cell viewWithTag:1];
+        NSURL *imgUrl = [NSURL URLWithString:[noticia imagem]];
+        NSData *imgData = [NSData dataWithContentsOfURL:imgUrl];
+        UIImage *img = [UIImage imageWithData:imgData];
+        [imgView setImage:img];
+    }
+    else
+    {
+        UILabel *labelTexto = (UILabel *)[cell viewWithTag:2];
+        [labelTexto setFrame:CGRectMake(6, 6, 304, 78)];
+    }
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"dd/MM/yyyy"];
@@ -223,8 +231,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UITableViewCell *cell = [self.noticiasTableView cellForRowAtIndexPath:indexPath];
+    UIImage *imagem = [(UIImageView *)[cell viewWithTag:1] image];
+    
     Noticia *noticia = [noticias objectAtIndex:[indexPath row]];
-    NoticiasDetalhesViewController *noticiasDetalhesViewController = [[NoticiasDetalhesViewController alloc] initWithNoticia:noticia];
+    NoticiasDetalhesViewController *noticiasDetalhesViewController = [[NoticiasDetalhesViewController alloc]
+                                                                      initWithNoticia:noticia
+                                                                      eImagem:imagem];
     [self.navigationController pushViewController:noticiasDetalhesViewController animated:YES];
 }
 
