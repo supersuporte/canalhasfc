@@ -1,0 +1,88 @@
+// !$*UTF8*$!
+{
+	0712E74017DFD85D00C22F74 /* CanalhasFC */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = CanalhasFC;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	0712E74C17DFD87D00C22F74 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	0712E74D17DFD87D00C22F74 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	078E794317CC26D800BD4C53 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 0712E74017DFD85D00C22F74 /* CanalhasFC */;
+		activeTarget = 078E794B17CC26D800BD4C53 /* CanalhasFC */;
+		codeSenseManager = 0712E74D17DFD87D00C22F74 /* Code sense */;
+		executables = (
+			0712E74017DFD85D00C22F74 /* CanalhasFC */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					848,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 400545885;
+			PBXWorkspaceStateSaveDate = 400545885;
+		};
+		sourceControlManager = 0712E74C17DFD87D00C22F74 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	078E794B17CC26D800BD4C53 /* CanalhasFC */ = {
+		activeExec = 0;
+		executables = (
+			0712E74017DFD85D00C22F74 /* CanalhasFC */,
+		);
+	};
+}
