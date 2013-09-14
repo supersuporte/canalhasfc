@@ -77,7 +77,7 @@
 {
     [activityIndicator startAnimating];
     
-    NSString *url = [NSString stringWithFormat:@"http://127.0.0.1/canalhasNoticias.json"];
+    NSString *url = [NSString stringWithFormat:@"http://www.supersuporte.com.br/canalhasfc/canalhasNoticias.json"];
     
     [self consomeWebServices:url];
 }
