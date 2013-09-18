@@ -18,6 +18,7 @@
 		071C0C2417CFBF9900DA4339 /* FinancasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071C0C2217CFBF9900DA4339 /* FinancasViewController.xib */; };
 		071C0C2817CFBFAC00DA4339 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 071C0C2617CFBFAC00DA4339 /* StoreViewController.m */; };
 		071C0C2917CFBFAC00DA4339 /* StoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071C0C2717CFBFAC00DA4339 /* StoreViewController.xib */; };
+		0753EAE517E93764007CA338 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0753EAE417E93764007CA338 /* README.md */; };
 		078E795117CC26D800BD4C53 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078E795017CC26D800BD4C53 /* UIKit.framework */; };
 		078E795317CC26D800BD4C53 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078E795217CC26D800BD4C53 /* Foundation.framework */; };
 		078E795517CC26D800BD4C53 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078E795417CC26D800BD4C53 /* CoreGraphics.framework */; };
@@ -51,6 +52,7 @@
 		071C0C2517CFBFAC00DA4339 /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
 		071C0C2617CFBFAC00DA4339 /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		071C0C2717CFBFAC00DA4339 /* StoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreViewController.xib; sourceTree = "<group>"; };
+		0753EAE417E93764007CA338 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		078E794C17CC26D800BD4C53 /* CanalhasFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanalhasFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		078E795017CC26D800BD4C53 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		078E795217CC26D800BD4C53 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -126,6 +128,7 @@
 				078E795717CC26D800BD4C53 /* Supporting Files */,
 				078E794F17CC26D800BD4C53 /* Frameworks */,
 				078E794D17CC26D800BD4C53 /* Products */,
+				0753EAE417E93764007CA338 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,6 +247,7 @@
 				071C0C2917CFBFAC00DA4339 /* StoreViewController.xib in Resources */,
 				07FD424817DA50D0007B93EF /* NoticiasDetalhesViewController.xib in Resources */,
 				07FD424F17DA5867007B93EF /* setaDireita.png in Resources */,
+				0753EAE517E93764007CA338 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
