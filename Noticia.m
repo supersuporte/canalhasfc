@@ -15,4 +15,18 @@
 @synthesize titulo;
 @synthesize texto;
 
+- (id)initWithDicionario:(NSDictionary *)dicionario
+{
+    NSString *dataSemFormatacao = [NSString stringWithFormat:@"%@", [dicionario objectForKey:@"data"]];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+    [self setData:[dateFormatter dateFromString:dataSemFormatacao]];
+    
+    [self setImagem:[dicionario objectForKey:@"imagem"]];
+    [self setTitulo:[dicionario objectForKey:@"titulo"]];
+    [self setTexto:[dicionario objectForKey:@"texto"]];
+    
+    return self;
+}
+
 @end

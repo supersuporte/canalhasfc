@@ -30,20 +30,8 @@
     
     NSMutableArray *noticias = [[NSMutableArray alloc] init];
     
-    for (NSDictionary *itemDoArray in arrayDoDicionarioNoticia) {
-        
-        Noticia *noticia = [[Noticia alloc] init];
-        
-        NSString *data = [NSString stringWithFormat:@"%@", [itemDoArray objectForKey:@"data"]];
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"dd/MM/yyyy"];
-        [noticia setData:[dateFormatter dateFromString:data]];
-
-        [noticia setImagem:[itemDoArray objectForKey:@"imagem"]];
-        [noticia setTitulo:[itemDoArray objectForKey:@"titulo"]];
-        [noticia setTexto:[itemDoArray objectForKey:@"texto"]];
-        
-        [noticias addObject:noticia];
+    for (NSDictionary *itemDoArray in arrayDoDicionarioNoticia) {        
+        [noticias addObject:[[Noticia alloc] initWithDicionario:itemDoArray]];
     }
     
     return noticias;

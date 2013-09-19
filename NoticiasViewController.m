@@ -77,7 +77,8 @@
 {
     [activityIndicator startAnimating];
     
-    NSString *url = [NSString stringWithFormat:@"http://www.supersuporte.com.br/canalhasfc/canalhasNoticias.json"];
+    //NSString *url = [NSString stringWithFormat:@"http://www.supersuporte.com.br/canalhasfc/noticias.json"];
+    NSString *url = [NSString stringWithFormat:@"http://127.0.0.1/canalhasfc/noticias.json"];
     
     [self consomeWebServices:url];
 }
@@ -119,7 +120,8 @@
     
     jsonData = nil;
     connection = nil;
-    
+    jsonDictionary = nil;
+
     [activityIndicator stopAnimating];
 }
 
@@ -241,7 +243,8 @@
     [self.navigationController pushViewController:noticiasDetalhesViewController animated:YES];
 }
 
-- (void) voltar {
+- (void)voltar
+{
     [self dismissModalViewControllerAnimated:YES];
 }
 

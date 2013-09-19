@@ -29,7 +29,6 @@
 		078E796517CC26D800BD4C53 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 078E796417CC26D800BD4C53 /* Default@2x.png */; };
 		078E796717CC26D800BD4C53 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 078E796617CC26D800BD4C53 /* Default-568h@2x.png */; };
 		07F092F117EB287A00CA2050 /* Financa.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F092F017EB287A00CA2050 /* Financa.m */; };
-		07F092F417EB292700CA2050 /* FinancaUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F092F317EB292700CA2050 /* FinancaUtils.m */; };
 		07FD424717DA50D0007B93EF /* NoticiasDetalhesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FD424517DA50CF007B93EF /* NoticiasDetalhesViewController.m */; };
 		07FD424817DA50D0007B93EF /* NoticiasDetalhesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FD424617DA50D0007B93EF /* NoticiasDetalhesViewController.xib */; };
 		07FD424F17DA5867007B93EF /* setaDireita.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FD424E17DA5867007B93EF /* setaDireita.png */; };
@@ -70,8 +69,6 @@
 		078E796617CC26D800BD4C53 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		07F092EF17EB287A00CA2050 /* Financa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Financa.h; sourceTree = SOURCE_ROOT; };
 		07F092F017EB287A00CA2050 /* Financa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Financa.m; sourceTree = SOURCE_ROOT; };
-		07F092F217EB292700CA2050 /* FinancaUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancaUtils.h; sourceTree = "<group>"; };
-		07F092F317EB292700CA2050 /* FinancaUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancaUtils.m; sourceTree = "<group>"; };
 		07FD424417DA50CF007B93EF /* NoticiasDetalhesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticiasDetalhesViewController.h; sourceTree = "<group>"; };
 		07FD424517DA50CF007B93EF /* NoticiasDetalhesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticiasDetalhesViewController.m; sourceTree = "<group>"; };
 		07FD424617DA50D0007B93EF /* NoticiasDetalhesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticiasDetalhesViewController.xib; sourceTree = "<group>"; };
@@ -98,8 +95,6 @@
 			children = (
 				0719495517D810F40082AFF1 /* NoticiaUtils.h */,
 				0719495617D810F40082AFF1 /* NoticiaUtils.m */,
-				07F092F217EB292700CA2050 /* FinancaUtils.h */,
-				07F092F317EB292700CA2050 /* FinancaUtils.m */,
 				0719495917D813360082AFF1 /* Conexao.h */,
 				0719495A17D813360082AFF1 /* Conexao.m */,
 			);
@@ -279,7 +274,6 @@
 				0719495717D810F40082AFF1 /* NoticiaUtils.m in Sources */,
 				07FD424717DA50D0007B93EF /* NoticiasDetalhesViewController.m in Sources */,
 				07F092F117EB287A00CA2050 /* Financa.m in Sources */,
-				07F092F417EB292700CA2050 /* FinancaUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

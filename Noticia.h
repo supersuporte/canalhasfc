@@ -15,4 +15,6 @@
 @property (strong, nonatomic) NSString *titulo;
 @property (strong, nonatomic) NSString *texto;
 
+- (id)initWithDicionario:(NSDictionary *)dicionario;
+
 @end
