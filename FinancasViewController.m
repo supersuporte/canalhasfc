@@ -7,8 +7,18 @@
 //
 
 #import "FinancasViewController.h"
+#import "FinancaUtils.h"
+#import "Conexao.h"
 
 @interface FinancasViewController ()
+{
+    NSMutableArray *financas;
+    
+    NSURLConnection *connection;
+    NSMutableData *jsonData;
+    
+    UIActivityIndicatorView *activityIndicator;
+}
 
 @end
 
@@ -18,8 +28,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        UITabBarItem *tabBarItem = [self tabBarItem];
-        [tabBarItem setTitle:@"Finanças"];
     }
     return self;
 }
@@ -27,12 +35,137 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIBarButtonItem *voltar = [[UIBarButtonItem alloc] initWithTitle:@"Voltar"
+                                                       style:UIBarButtonItemStyleDone
+                                                       target:self
+                                                       action:@selector(voltar)];
+    self.navigationItem.backBarButtonItem = voltar;
+    
+    [self setTitle:@"Finanças"];
+    [self.view setBackgroundColor:[UIColor blackColor]];
+    
+    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+    
+    NSDictionary *financasNCTitulo = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor yellowColor],
+                                      UITextAttributeTextColor,
+                                      [UIColor clearColor],
+                                      UITextAttributeTextShadowColor, nil];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:financasNCTitulo];
+    
+    
+    activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    activityIndicator.frame = CGRectMake(140.0, 180.0, 40.0, 40.0);
+    
+    [self.view addSubview:activityIndicator];
+    [activityIndicator stopAnimating];
+    
+    [self pesquisaWebServices];
+}
+
+- (void)pesquisaWebServices
+{
+    [activityIndicator startAnimating];
+    
+    //NSString *url = [NSString stringWithFormat:@"http://www.supersuporte.com.br/canalhasfc/financas.json"];
+    NSString *url = [NSString stringWithFormat:@"http://127.0.0.1/canalhasfc/financas.json"];
+    
+    [self consomeWebServices:url];
+}
+
+- (void)consomeWebServices:(NSString *)url
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    jsonData = [[NSMutableData alloc] init];
+    
+    NSURL *nsurl = [NSURL URLWithString:url];
+    NSURLRequest *req = [NSURLRequest requestWithURL:nsurl];
+    
+    connection = [[NSURLConnection alloc] initWithRequest:req
+                                                 delegate:self
+                                         startImmediately:YES];
+}
+
+- (void)connection:(NSURLConnection *)conn didReceiveData:(NSData *)dados
+{
+    [jsonData appendData:dados];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)conn
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    NSError *error;
+    
+    NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                                   options:NSJSONReadingMutableContainers
+                                                                     error:&error];
+    
+    if (!error)
+    {
+        financas = [FinancaUtils financasComDicionario:jsonDictionary];
+        [self montaResultado];
+    }
+    
+    jsonData = nil;
+    connection = nil;
+    
+    [activityIndicator stopAnimating];
+}
+
+-(void)connection:(NSURLConnection *)conn didFailWithError:(NSError *)error
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [activityIndicator stopAnimating];
+    
+    connection = nil;
+    jsonData = nil;
+    
+    NSString *errorString = [NSString stringWithFormat:@"Erro de conexão: %@", [error localizedDescription]];
+    
+    Conexao *conexao = [Conexao alloc];
+    if ([conexao conexaoComInternet] && [conexao conexaoComWebServices])
+    {
+        UIAlertView * av = [[UIAlertView alloc] initWithTitle:@"Não foi possível se conectar ao servidor"
+                                                      message:errorString
+                                                     delegate:nil
+                                            cancelButtonTitle:@"Ok"
+                                            otherButtonTitles:nil];
+        [av show];
+    }
+}
+
+- (void)montaResultado
+{
+    /*
+    noticiasTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, 457)];
+    [noticiasTableView setAllowsSelection:YES];
+    [noticiasTableView setBackgroundColor:[UIColor blackColor]];
+    [noticiasTableView setOpaque:YES];
+    [noticiasTableView setBackgroundView:nil];
+    [noticiasTableView setRowHeight:92];
+    [noticiasTableView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
+    [noticiasTableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+    [noticiasTableView setSeparatorColor:[UIColor darkGrayColor]];
+    
+    [noticiasTableView setDataSource:self];
+    [noticiasTableView setDelegate:self];
+    
+    [self.view addSubview:noticiasTableView];
+     */
+}
+
+
+
+- (void)voltar
+{
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -28,6 +28,8 @@
 		078E796317CC26D800BD4C53 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 078E796217CC26D800BD4C53 /* Default.png */; };
 		078E796517CC26D800BD4C53 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 078E796417CC26D800BD4C53 /* Default@2x.png */; };
 		078E796717CC26D800BD4C53 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 078E796617CC26D800BD4C53 /* Default-568h@2x.png */; };
+		07F092F117EB287A00CA2050 /* Financa.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F092F017EB287A00CA2050 /* Financa.m */; };
+		07F092F417EB292700CA2050 /* FinancaUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F092F317EB292700CA2050 /* FinancaUtils.m */; };
 		07FD424717DA50D0007B93EF /* NoticiasDetalhesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FD424517DA50CF007B93EF /* NoticiasDetalhesViewController.m */; };
 		07FD424817DA50D0007B93EF /* NoticiasDetalhesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FD424617DA50D0007B93EF /* NoticiasDetalhesViewController.xib */; };
 		07FD424F17DA5867007B93EF /* setaDireita.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FD424E17DA5867007B93EF /* setaDireita.png */; };
@@ -52,7 +54,7 @@
 		071C0C2517CFBFAC00DA4339 /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
 		071C0C2617CFBFAC00DA4339 /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		071C0C2717CFBFAC00DA4339 /* StoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreViewController.xib; sourceTree = "<group>"; };
-		0753EAE417E93764007CA338 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		0753EAE417E93764007CA338 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		078E794C17CC26D800BD4C53 /* CanalhasFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanalhasFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		078E795017CC26D800BD4C53 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		078E795217CC26D800BD4C53 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -66,6 +68,10 @@
 		078E796217CC26D800BD4C53 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		078E796417CC26D800BD4C53 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		078E796617CC26D800BD4C53 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		07F092EF17EB287A00CA2050 /* Financa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Financa.h; sourceTree = SOURCE_ROOT; };
+		07F092F017EB287A00CA2050 /* Financa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Financa.m; sourceTree = SOURCE_ROOT; };
+		07F092F217EB292700CA2050 /* FinancaUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancaUtils.h; sourceTree = "<group>"; };
+		07F092F317EB292700CA2050 /* FinancaUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancaUtils.m; sourceTree = "<group>"; };
 		07FD424417DA50CF007B93EF /* NoticiasDetalhesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticiasDetalhesViewController.h; sourceTree = "<group>"; };
 		07FD424517DA50CF007B93EF /* NoticiasDetalhesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticiasDetalhesViewController.m; sourceTree = "<group>"; };
 		07FD424617DA50D0007B93EF /* NoticiasDetalhesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticiasDetalhesViewController.xib; sourceTree = "<group>"; };
@@ -92,6 +98,8 @@
 			children = (
 				0719495517D810F40082AFF1 /* NoticiaUtils.h */,
 				0719495617D810F40082AFF1 /* NoticiaUtils.m */,
+				07F092F217EB292700CA2050 /* FinancaUtils.h */,
+				07F092F317EB292700CA2050 /* FinancaUtils.m */,
 				0719495917D813360082AFF1 /* Conexao.h */,
 				0719495A17D813360082AFF1 /* Conexao.m */,
 			);
@@ -128,7 +136,6 @@
 				078E795717CC26D800BD4C53 /* Supporting Files */,
 				078E794F17CC26D800BD4C53 /* Frameworks */,
 				078E794D17CC26D800BD4C53 /* Products */,
-				0753EAE417E93764007CA338 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +165,8 @@
 				078E796017CC26D800BD4C53 /* AppDelegate.m */,
 				0719495217D8081B0082AFF1 /* Noticia.h */,
 				0719495317D8081B0082AFF1 /* Noticia.m */,
+				07F092EF17EB287A00CA2050 /* Financa.h */,
+				07F092F017EB287A00CA2050 /* Financa.m */,
 			);
 			name = Classes;
 			path = CanalhasFC;
@@ -167,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				07FD424D17DA55B3007B93EF /* Imagens */,
+				0753EAE417E93764007CA338 /* README.md */,
 				078E795817CC26D800BD4C53 /* CanalhasFC-Info.plist */,
 				078E795917CC26D800BD4C53 /* InfoPlist.strings */,
 				078E795C17CC26D800BD4C53 /* main.m */,
@@ -268,6 +278,8 @@
 				0719495417D8081B0082AFF1 /* Noticia.m in Sources */,
 				0719495717D810F40082AFF1 /* NoticiaUtils.m in Sources */,
 				07FD424717DA50D0007B93EF /* NoticiasDetalhesViewController.m in Sources */,
+				07F092F117EB287A00CA2050 /* Financa.m in Sources */,
+				07F092F417EB292700CA2050 /* FinancaUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
