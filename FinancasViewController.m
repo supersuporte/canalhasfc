@@ -7,12 +7,12 @@
 //
 
 #import "FinancasViewController.h"
-#import "FinancaUtils.h"
+#import "Financa.h"
 #import "Conexao.h"
 
 @interface FinancasViewController ()
 {
-    NSMutableArray *financas;
+    Financa *financa;
     
     NSURLConnection *connection;
     NSMutableData *jsonData;
@@ -68,7 +68,7 @@
     [activityIndicator startAnimating];
     
     //NSString *url = [NSString stringWithFormat:@"http://www.supersuporte.com.br/canalhasfc/financas.json"];
-    NSString *url = [NSString stringWithFormat:@"http://127.0.0.1/canalhasfc/financas.json"];
+    NSString *url = [NSString stringWithFormat:@"http://127.0.0.1/canalhasfc/f.json"];
     
     [self consomeWebServices:url];
 }
@@ -104,7 +104,7 @@
     
     if (!error)
     {
-        financas = [FinancaUtils financasComDicionario:jsonDictionary];
+        financa = [[Financa alloc] initWithDicionario:jsonDictionary];
         [self montaResultado];
     }
     
@@ -138,25 +138,11 @@
 
 - (void)montaResultado
 {
-    /*
-    noticiasTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, 457)];
-    [noticiasTableView setAllowsSelection:YES];
-    [noticiasTableView setBackgroundColor:[UIColor blackColor]];
-    [noticiasTableView setOpaque:YES];
-    [noticiasTableView setBackgroundView:nil];
-    [noticiasTableView setRowHeight:92];
-    [noticiasTableView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
-    [noticiasTableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
-    [noticiasTableView setSeparatorColor:[UIColor darkGrayColor]];
+    UILabel *saldoAtual = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+    [saldoAtual setText:[NSString stringWithFormat:@"%@%@", @"Saldo Atual: ", [financa saldoAtual]]];
     
-    [noticiasTableView setDataSource:self];
-    [noticiasTableView setDelegate:self];
-    
-    [self.view addSubview:noticiasTableView];
-     */
+    [self.view addSubview:saldoAtual];
 }
-
-
 
 - (void)voltar
 {
