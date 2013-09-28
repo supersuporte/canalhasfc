@@ -120,7 +120,6 @@
     
     jsonData = nil;
     connection = nil;
-    jsonDictionary = nil;
 
     [activityIndicator stopAnimating];
 }
