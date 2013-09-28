@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FinancasViewController : UIViewController
+@interface FinancasViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) UITableView *atletasTableView;
 
 @end

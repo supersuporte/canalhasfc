@@ -33,7 +33,7 @@
 
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     
-    NSArray *viewControllers = [NSArray arrayWithObjects:noticiasNavigationController, financasNavigationController, storeViewController, nil];
+    NSArray *viewControllers = [NSArray arrayWithObjects:financasNavigationController, noticiasNavigationController, storeViewController, nil];
     [tabBarController setViewControllers:viewControllers];
     
     [self.window setRootViewController:tabBarController];

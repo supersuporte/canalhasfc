@@ -32,6 +32,7 @@
 		078E796717CC26D800BD4C53 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 078E796617CC26D800BD4C53 /* Default-568h@2x.png */; };
 		07D4EF9F17F3C786005E2729 /* AtletaUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D4EF9E17F3C786005E2729 /* AtletaUtils.m */; };
 		07F092F117EB287A00CA2050 /* Financa.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F092F017EB287A00CA2050 /* Financa.m */; };
+		07F865AA17F741630016DCFD /* DataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F865A917F741630016DCFD /* DataUtils.m */; };
 		07FD424717DA50D0007B93EF /* NoticiasDetalhesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FD424517DA50CF007B93EF /* NoticiasDetalhesViewController.m */; };
 		07FD424817DA50D0007B93EF /* NoticiasDetalhesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FD424617DA50D0007B93EF /* NoticiasDetalhesViewController.xib */; };
 		07FD424F17DA5867007B93EF /* setaDireita.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FD424E17DA5867007B93EF /* setaDireita.png */; };
@@ -78,6 +79,8 @@
 		07D4EF9E17F3C786005E2729 /* AtletaUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtletaUtils.m; sourceTree = "<group>"; };
 		07F092EF17EB287A00CA2050 /* Financa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Financa.h; sourceTree = SOURCE_ROOT; };
 		07F092F017EB287A00CA2050 /* Financa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Financa.m; sourceTree = SOURCE_ROOT; };
+		07F865A817F741630016DCFD /* DataUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataUtils.h; sourceTree = "<group>"; };
+		07F865A917F741630016DCFD /* DataUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataUtils.m; sourceTree = "<group>"; };
 		07FD424417DA50CF007B93EF /* NoticiasDetalhesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticiasDetalhesViewController.h; sourceTree = "<group>"; };
 		07FD424517DA50CF007B93EF /* NoticiasDetalhesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticiasDetalhesViewController.m; sourceTree = "<group>"; };
 		07FD424617DA50D0007B93EF /* NoticiasDetalhesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticiasDetalhesViewController.xib; sourceTree = "<group>"; };
@@ -104,6 +107,8 @@
 			children = (
 				0719495917D813360082AFF1 /* Conexao.h */,
 				0719495A17D813360082AFF1 /* Conexao.m */,
+				07F865A817F741630016DCFD /* DataUtils.h */,
+				07F865A917F741630016DCFD /* DataUtils.m */,
 				0719495517D810F40082AFF1 /* NoticiaUtils.h */,
 				0719495617D810F40082AFF1 /* NoticiaUtils.m */,
 				07D4EF9D17F3C786005E2729 /* AtletaUtils.h */,
@@ -292,6 +297,7 @@
 				070B344A17ECBE3D006213A6 /* Atleta.m in Sources */,
 				070B344D17ECBEE0006213A6 /* SituacaoFinanceira.m in Sources */,
 				07D4EF9F17F3C786005E2729 /* AtletaUtils.m in Sources */,
+				07F865AA17F741630016DCFD /* DataUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
