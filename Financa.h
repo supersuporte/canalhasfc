@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSString *saldoAtual;
 @property (strong, nonatomic) NSString *caixa;
+@property (strong, nonatomic) NSMutableArray *atletas;
 
 - (id)initWithDicionario:(NSDictionary *)dicionario;
 

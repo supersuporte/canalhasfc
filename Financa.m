@@ -7,19 +7,22 @@
 //
 
 #import "Financa.h"
+#import "AtletaUtils.h"
 
 @implementation Financa
 
 @synthesize saldoAtual;
 @synthesize caixa;
+@synthesize atletas;
 
 - (id)initWithDicionario:(NSDictionary *)dicionario
 {
-    NSDictionary *financaDic = [dicionario objectForKey:@"financa"];
+    NSDictionary *financaDicionario = [dicionario objectForKey:@"financa"];
     
-    [self setSaldoAtual:[financaDic objectForKey:@"saldoAtual"]];
-    [self setCaixa:[financaDic objectForKey:@"caixa"]];
-    
+    [self setSaldoAtual:[financaDicionario objectForKey:@"saldoAtual"]];
+    [self setCaixa:[financaDicionario objectForKey:@"caixa"]];
+    [self setAtletas:[AtletaUtils atletasComDicionario:dicionario]];
+
     return self;
 }
 
