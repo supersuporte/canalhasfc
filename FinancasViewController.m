@@ -10,6 +10,8 @@
 #import "Financa.h"
 #import "Conexao.h"
 #import "DataUtils.h"
+#import "Atleta.h"
+#import "SituacaoFinanceira.h"
 
 @interface FinancasViewController ()
 {
@@ -151,59 +153,6 @@
     [self montaResultadoAtletas];
 }
 
-- (void)montaResultadoAtletas
-{
-    // Atletas
-    UILabel *labelAtletasBg = [[UILabel alloc] initWithFrame:CGRectMake(0, 76, larguraDaTela, 15)];
-    [labelAtletasBg setBackgroundColor:[UIColor grayColor]];
-    [self.view addSubview:labelAtletasBg];
-    
-    UILabel *labelAtletas = [[UILabel alloc] initWithFrame:CGRectMake(6, 0, 100, 15)];
-    [labelAtletas setBackgroundColor:[UIColor clearColor]];
-    [labelAtletas setTextColor:[UIColor whiteColor]];
-    [labelAtletas setFont:[UIFont boldSystemFontOfSize:12]];
-    [labelAtletas setText:@"Atletas"];
-    [labelAtletasBg addSubview:labelAtletas];
-    
-    UILabel *labelAtletasMesAnterior = [[UILabel alloc] initWithFrame:CGRectMake(larguraDaTela-120, 0, 30, 15)];
-    [labelAtletasMesAnterior setBackgroundColor:[UIColor clearColor]];
-    [labelAtletasMesAnterior setTextColor:[UIColor whiteColor]];
-    [labelAtletasMesAnterior setFont:[UIFont boldSystemFontOfSize:12]];
-    [labelAtletasMesAnterior setTextAlignment:NSTextAlignmentRight];
-    [labelAtletasMesAnterior setText:[[DataUtils alloc] mesAnterior]];
-    [labelAtletasBg addSubview:labelAtletasMesAnterior];
-    
-    UILabel *labelAtletasMesAtual = [[UILabel alloc] initWithFrame:CGRectMake(larguraDaTela-80, 0, 30, 15)];
-    [labelAtletasMesAtual setBackgroundColor:[UIColor clearColor]];
-    [labelAtletasMesAtual setTextColor:[UIColor whiteColor]];
-    [labelAtletasMesAtual setFont:[UIFont boldSystemFontOfSize:12]];
-    [labelAtletasMesAtual setTextAlignment:NSTextAlignmentRight];
-    [labelAtletasMesAtual setText:[[DataUtils alloc] mesAtual]];
-    [labelAtletasBg addSubview:labelAtletasMesAtual];
-    
-    UILabel *labelAtletasMesSeguinte = [[UILabel alloc] initWithFrame:CGRectMake(larguraDaTela-40, 0, 30, 15)];
-    [labelAtletasMesSeguinte setBackgroundColor:[UIColor clearColor]];
-    [labelAtletasMesSeguinte setTextColor:[UIColor whiteColor]];
-    [labelAtletasMesSeguinte setFont:[UIFont boldSystemFontOfSize:12]];
-    [labelAtletasMesSeguinte setTextAlignment:NSTextAlignmentRight];
-    [labelAtletasMesSeguinte setText:[[DataUtils alloc] mesSeguinte]];
-    [labelAtletasBg addSubview:labelAtletasMesSeguinte];
-    
-    atletasTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 91, larguraDaTela, alturaDaTela-91)];
-    [atletasTableView setAllowsSelection:NO];
-    [atletasTableView setBackgroundColor:[UIColor blackColor]];
-    [atletasTableView setOpaque:YES];
-    [atletasTableView setBackgroundView:nil];
-    [atletasTableView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
-    [atletasTableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
-    [atletasTableView setSeparatorColor:[UIColor darkGrayColor]];
-    
-    [atletasTableView setDataSource:self];
-    [atletasTableView setDelegate:self];
-    
-    [self.view addSubview:atletasTableView];    
-}
-
 - (void)montaResultadoResumo
 {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
@@ -263,6 +212,59 @@
     [self.view addSubview:valorTotal];
 }
 
+- (void)montaResultadoAtletas
+{
+    // Atletas
+    UILabel *labelAtletasBg = [[UILabel alloc] initWithFrame:CGRectMake(0, 76, larguraDaTela, 15)];
+    [labelAtletasBg setBackgroundColor:[UIColor grayColor]];
+    [self.view addSubview:labelAtletasBg];
+    
+    UILabel *labelAtletas = [[UILabel alloc] initWithFrame:CGRectMake(6, 0, 100, 15)];
+    [labelAtletas setBackgroundColor:[UIColor clearColor]];
+    [labelAtletas setTextColor:[UIColor whiteColor]];
+    [labelAtletas setFont:[UIFont boldSystemFontOfSize:14]];
+    [labelAtletas setText:@"Atletas"];
+    [labelAtletasBg addSubview:labelAtletas];
+    
+    UILabel *labelAtletasMesAnterior = [[UILabel alloc] initWithFrame:CGRectMake(larguraDaTela-120, 0, 30, 15)];
+    [labelAtletasMesAnterior setBackgroundColor:[UIColor clearColor]];
+    [labelAtletasMesAnterior setTextColor:[UIColor whiteColor]];
+    [labelAtletasMesAnterior setFont:[UIFont boldSystemFontOfSize:14]];
+    [labelAtletasMesAnterior setTextAlignment:NSTextAlignmentCenter];
+    [labelAtletasMesAnterior setText:[[DataUtils alloc] mesAnterior]];
+    [labelAtletasBg addSubview:labelAtletasMesAnterior];
+    
+    UILabel *labelAtletasMesAtual = [[UILabel alloc] initWithFrame:CGRectMake(larguraDaTela-80, 0, 30, 15)];
+    [labelAtletasMesAtual setBackgroundColor:[UIColor clearColor]];
+    [labelAtletasMesAtual setTextColor:[UIColor whiteColor]];
+    [labelAtletasMesAtual setFont:[UIFont boldSystemFontOfSize:14]];
+    [labelAtletasMesAtual setTextAlignment:NSTextAlignmentCenter];
+    [labelAtletasMesAtual setText:[[DataUtils alloc] mesAtual]];
+    [labelAtletasBg addSubview:labelAtletasMesAtual];
+    
+    UILabel *labelAtletasMesSeguinte = [[UILabel alloc] initWithFrame:CGRectMake(larguraDaTela-40, 0, 30, 15)];
+    [labelAtletasMesSeguinte setBackgroundColor:[UIColor clearColor]];
+    [labelAtletasMesSeguinte setTextColor:[UIColor whiteColor]];
+    [labelAtletasMesSeguinte setFont:[UIFont boldSystemFontOfSize:14]];
+    [labelAtletasMesSeguinte setTextAlignment:NSTextAlignmentCenter];
+    [labelAtletasMesSeguinte setText:[[DataUtils alloc] mesSeguinte]];
+    [labelAtletasBg addSubview:labelAtletasMesSeguinte];
+    
+    atletasTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 91, larguraDaTela, alturaDaTela-182)];
+    [atletasTableView setAllowsSelection:NO];
+    [atletasTableView setBackgroundColor:[UIColor blackColor]];
+    [atletasTableView setOpaque:YES];
+    [atletasTableView setBackgroundView:nil];
+    [atletasTableView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
+    [atletasTableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+    [atletasTableView setSeparatorColor:[UIColor darkGrayColor]];
+    
+    [atletasTableView setDataSource:self];
+    [atletasTableView setDelegate:self];
+    
+    [self.view addSubview:atletasTableView];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -284,9 +286,55 @@
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:cellIdentifier];
+        [cell.textLabel setTextColor:[UIColor whiteColor]];
+        
+        UIImageView *icoMesAnterior = [[UIImageView alloc] initWithFrame:CGRectMake(larguraDaTela-110, 14, 15, 15)];
+        [icoMesAnterior setTag:1];
+        [cell.contentView addSubview:icoMesAnterior];
+
+        UIImageView *icoMesAtual = [[UIImageView alloc] initWithFrame:CGRectMake(larguraDaTela-70, 14, 15, 15)];
+        [icoMesAtual setTag:2];
+        [cell.contentView addSubview:icoMesAtual];
+
+        UIImageView *icoMesSeguinte = [[UIImageView alloc] initWithFrame:CGRectMake(larguraDaTela-30, 14, 15, 15)];
+        [icoMesSeguinte setTag:3];
+        [cell.contentView addSubview:icoMesSeguinte];
+	}
+    Atleta *atleta = [financa.atletas objectAtIndex:[indexPath row]];
+    [cell.textLabel setText:[atleta nome]];
+    
+    SituacaoFinanceira *situacaoFinanceira = [atleta situacaoFinanceira];
+    
+    UIImageView *imgView = (UIImageView *)[cell viewWithTag:1];
+    if ([situacaoFinanceira mesAnterior])
+    {
+        [imgView setBackgroundColor:[UIColor greenColor]];
     }
-    
-    
+    else
+    {
+        [imgView setBackgroundColor:[UIColor redColor]];
+    }
+
+    imgView = (UIImageView *)[cell viewWithTag:2];
+    if ([situacaoFinanceira mesAtual])
+    {
+        [imgView setBackgroundColor:[UIColor greenColor]];
+    }
+    else
+    {
+        [imgView setBackgroundColor:[UIColor redColor]];
+    }
+
+    imgView = (UIImageView *)[cell viewWithTag:3];
+    if ([situacaoFinanceira mesSeguinte])
+    {
+        [imgView setBackgroundColor:[UIColor greenColor]];
+    }
+    else
+    {
+        [imgView setBackgroundColor:[UIColor redColor]];
+    }
+
 	return cell;
 }
 
