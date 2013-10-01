@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "+[AtletaUtils atletasComDicionario:]:AtletaUtils.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[Atleta initWithDicionario:]:Atleta.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SituacaoFinanceira initWithDicionario:]:SituacaoFinanceira.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[FinancasViewController montaResultado]:FinancasViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "(__NSArrayM *)self-&gt;financa-&gt;atletas">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

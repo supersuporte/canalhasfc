@@ -31,6 +31,9 @@
 		078E796517CC26D800BD4C53 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 078E796417CC26D800BD4C53 /* Default@2x.png */; };
 		078E796717CC26D800BD4C53 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 078E796617CC26D800BD4C53 /* Default-568h@2x.png */; };
 		07D4EF9F17F3C786005E2729 /* AtletaUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D4EF9E17F3C786005E2729 /* AtletaUtils.m */; };
+		07E5E40617FA5B2A00A8575F /* ballRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E5E40517FA5B2A00A8575F /* ballRed.png */; };
+		07E5E40917FA5DA600A8575F /* ballGray.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E5E40717FA5DA600A8575F /* ballGray.png */; };
+		07E5E40A17FA5DA600A8575F /* ballGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E5E40817FA5DA600A8575F /* ballGreen.png */; };
 		07F092F117EB287A00CA2050 /* Financa.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F092F017EB287A00CA2050 /* Financa.m */; };
 		07F865AA17F741630016DCFD /* DataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F865A917F741630016DCFD /* DataUtils.m */; };
 		07FD424717DA50D0007B93EF /* NoticiasDetalhesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FD424517DA50CF007B93EF /* NoticiasDetalhesViewController.m */; };
@@ -77,6 +80,9 @@
 		078E796617CC26D800BD4C53 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		07D4EF9D17F3C786005E2729 /* AtletaUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtletaUtils.h; sourceTree = "<group>"; };
 		07D4EF9E17F3C786005E2729 /* AtletaUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtletaUtils.m; sourceTree = "<group>"; };
+		07E5E40517FA5B2A00A8575F /* ballRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ballRed.png; path = ../ballRed.png; sourceTree = "<group>"; };
+		07E5E40717FA5DA600A8575F /* ballGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ballGray.png; sourceTree = SOURCE_ROOT; };
+		07E5E40817FA5DA600A8575F /* ballGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ballGreen.png; sourceTree = SOURCE_ROOT; };
 		07F092EF17EB287A00CA2050 /* Financa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Financa.h; sourceTree = SOURCE_ROOT; };
 		07F092F017EB287A00CA2050 /* Financa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Financa.m; sourceTree = SOURCE_ROOT; };
 		07F865A817F741630016DCFD /* DataUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataUtils.h; sourceTree = "<group>"; };
@@ -208,6 +214,9 @@
 			isa = PBXGroup;
 			children = (
 				07FD424E17DA5867007B93EF /* setaDireita.png */,
+				07E5E40517FA5B2A00A8575F /* ballRed.png */,
+				07E5E40817FA5DA600A8575F /* ballGreen.png */,
+				07E5E40717FA5DA600A8575F /* ballGray.png */,
 			);
 			name = Imagens;
 			sourceTree = "<group>";
@@ -273,6 +282,9 @@
 				07FD424817DA50D0007B93EF /* NoticiasDetalhesViewController.xib in Resources */,
 				07FD424F17DA5867007B93EF /* setaDireita.png in Resources */,
 				0753EAE517E93764007CA338 /* README.md in Resources */,
+				07E5E40617FA5B2A00A8575F /* ballRed.png in Resources */,
+				07E5E40917FA5DA600A8575F /* ballGray.png in Resources */,
+				07E5E40A17FA5DA600A8575F /* ballGreen.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

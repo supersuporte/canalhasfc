@@ -78,8 +78,8 @@
 {
     [activityIndicator startAnimating];
     
-    //NSString *url = [NSString stringWithFormat:@"http://www.supersuporte.com.br/canalhasfc/financas.json"];
-    NSString *url = [NSString stringWithFormat:@"http://127.0.0.1/canalhasfc/f.json"];
+    NSString *url = [NSString stringWithFormat:@"http://www.supersuporte.com.br/canalhasfc/financas.json"];
+    //NSString *url = [NSString stringWithFormat:@"http://127.0.0.1/canalhasfc/f.json"];
     
     [self consomeWebServices:url];
 }
@@ -305,35 +305,18 @@
     
     SituacaoFinanceira *situacaoFinanceira = [atleta situacaoFinanceira];
     
+    UIImage *ballRed = [UIImage imageNamed:@"ballRed"];
+    UIImage *ballGreen = [UIImage imageNamed:@"ballGreen"];
+    UIImage *ballGray = [UIImage imageNamed:@"ballGray"];
+    
     UIImageView *imgView = (UIImageView *)[cell viewWithTag:1];
-    if ([situacaoFinanceira mesAnterior])
-    {
-        [imgView setBackgroundColor:[UIColor greenColor]];
-    }
-    else
-    {
-        [imgView setBackgroundColor:[UIColor redColor]];
-    }
-
+    [imgView setImage:([situacaoFinanceira mesAnterior] ? ballGreen : ballRed)];
+    
     imgView = (UIImageView *)[cell viewWithTag:2];
-    if ([situacaoFinanceira mesAtual])
-    {
-        [imgView setBackgroundColor:[UIColor greenColor]];
-    }
-    else
-    {
-        [imgView setBackgroundColor:[UIColor redColor]];
-    }
-
+    [imgView setImage:([situacaoFinanceira mesAtual] ? ballGreen : ballRed)];
+    
     imgView = (UIImageView *)[cell viewWithTag:3];
-    if ([situacaoFinanceira mesSeguinte])
-    {
-        [imgView setBackgroundColor:[UIColor greenColor]];
-    }
-    else
-    {
-        [imgView setBackgroundColor:[UIColor redColor]];
-    }
+    [imgView setImage:([situacaoFinanceira mesSeguinte] ? ballGreen : ballGray)];
 
 	return cell;
 }
