@@ -53,8 +53,7 @@
 
     [self setTitle:@"Notícias"];
     [self.view setBackgroundColor:[UIColor blackColor]];
-
-    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     
     NSDictionary *noticiasNCTitulo = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor yellowColor],
                                       UITextAttributeTextColor,
@@ -77,8 +76,8 @@
 {
     [activityIndicator startAnimating];
     
-    NSString *url = [NSString stringWithFormat:@"http://www.supersuporte.com.br/canalhasfc/noticias.json"];
-    //NSString *url = [NSString stringWithFormat:@"http://127.0.0.1/canalhasfc/noticias.json"];
+    //NSString *url = [NSString stringWithFormat:@"http://www.supersuporte.com.br/canalhasfc/noticias.json"];
+    NSString *url = [NSString stringWithFormat:@"http://127.0.0.1/canalhasfc/noticias.json"];
     
     [self consomeWebServices:url];
 }

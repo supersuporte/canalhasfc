@@ -53,9 +53,8 @@
     self.navigationItem.backBarButtonItem = voltar;
     
     [self setTitle:@"Finanças"];
-    [self.view setBackgroundColor:[UIColor blackColor]];
-    
-    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+    [self.view setBackgroundColor:[UIColor blackColor]];   
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     
     NSDictionary *financasNCTitulo = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor yellowColor],
                                       UITextAttributeTextColor,
@@ -78,8 +77,8 @@
 {
     [activityIndicator startAnimating];
     
-    NSString *url = [NSString stringWithFormat:@"http://www.supersuporte.com.br/canalhasfc/financas.json"];
-    //NSString *url = [NSString stringWithFormat:@"http://127.0.0.1/canalhasfc/f.json"];
+    //NSString *url = [NSString stringWithFormat:@"http://www.supersuporte.com.br/canalhasfc/financas.json"];
+    NSString *url = [NSString stringWithFormat:@"http://127.0.0.1/canalhasfc/f.json"];
     
     [self consomeWebServices:url];
 }
@@ -195,7 +194,11 @@
     [self.view addSubview:valorCaixa];
     
 	// Total
-    UILabel *labelTotal = [[UILabel alloc] initWithFrame:CGRectMake(6, 46, 120, 15)];
+    UILabel *lineTotal = [[UILabel alloc] initWithFrame:CGRectMake(6, 45, 185, 1)];
+    [lineTotal setBackgroundColor:[UIColor whiteColor]];
+    [self.view addSubview:lineTotal];
+
+    UILabel *labelTotal = [[UILabel alloc] initWithFrame:CGRectMake(6, 50, 120, 15)];
     [labelTotal setBackgroundColor:[UIColor clearColor]];
     [labelTotal setTextColor:[UIColor whiteColor]];
     [labelTotal setFont:[UIFont boldSystemFontOfSize:14]];
@@ -203,7 +206,7 @@
     [self.view addSubview:labelTotal];
     
     double total = saldoAtual + caixa;
-    UILabel *valorTotal = [[UILabel alloc] initWithFrame:CGRectMake(100, 46, 90, 15)];
+    UILabel *valorTotal = [[UILabel alloc] initWithFrame:CGRectMake(100, 50, 90, 15)];
     [valorTotal setBackgroundColor:[UIColor clearColor]];
     [valorTotal setTextColor:[UIColor whiteColor]];
     [valorTotal setFont:[UIFont boldSystemFontOfSize:14]];
@@ -215,42 +218,55 @@
 - (void)montaResultadoAtletas
 {
     // Atletas
-    UILabel *labelAtletasBg = [[UILabel alloc] initWithFrame:CGRectMake(0, 76, larguraDaTela, 15)];
-    [labelAtletasBg setBackgroundColor:[UIColor grayColor]];
+    UILabel *labelAtletasBg = [[UILabel alloc] initWithFrame:CGRectMake(0, 80, larguraDaTela, 19)];
+    [labelAtletasBg setBackgroundColor:[UIColor whiteColor]];
+    [labelAtletasBg setAlpha:0.1];
     [self.view addSubview:labelAtletasBg];
-    
+
+    UILabel *labelAtletasLine = [[UILabel alloc] initWithFrame:CGRectMake(0, 18, larguraDaTela, 1)];
+    [labelAtletasLine setBackgroundColor:[UIColor whiteColor]];
+    [labelAtletasBg addSubview:labelAtletasLine];
+
+    UILabel *labelAtletasFrame = [[UILabel alloc] initWithFrame:CGRectMake(0, 81, larguraDaTela, 18)];
+    [labelAtletasFrame setBackgroundColor:[UIColor clearColor]];
+    [self.view addSubview:labelAtletasFrame];
+
     UILabel *labelAtletas = [[UILabel alloc] initWithFrame:CGRectMake(6, 0, 100, 15)];
     [labelAtletas setBackgroundColor:[UIColor clearColor]];
-    [labelAtletas setTextColor:[UIColor whiteColor]];
+    [labelAtletas setTextColor:[UIColor yellowColor]];
+    [labelAtletas setAlpha:(0.8)];
     [labelAtletas setFont:[UIFont boldSystemFontOfSize:14]];
     [labelAtletas setText:@"Atletas"];
-    [labelAtletasBg addSubview:labelAtletas];
+    [labelAtletasFrame addSubview:labelAtletas];
     
     UILabel *labelAtletasMesAnterior = [[UILabel alloc] initWithFrame:CGRectMake(larguraDaTela-120, 0, 30, 15)];
     [labelAtletasMesAnterior setBackgroundColor:[UIColor clearColor]];
-    [labelAtletasMesAnterior setTextColor:[UIColor whiteColor]];
+    [labelAtletasMesAnterior setTextColor:[UIColor yellowColor]];
+    [labelAtletasMesAnterior setAlpha:(0.8)];
     [labelAtletasMesAnterior setFont:[UIFont boldSystemFontOfSize:14]];
     [labelAtletasMesAnterior setTextAlignment:NSTextAlignmentCenter];
     [labelAtletasMesAnterior setText:[[DataUtils alloc] mesAnterior]];
-    [labelAtletasBg addSubview:labelAtletasMesAnterior];
+    [labelAtletasFrame addSubview:labelAtletasMesAnterior];
     
     UILabel *labelAtletasMesAtual = [[UILabel alloc] initWithFrame:CGRectMake(larguraDaTela-80, 0, 30, 15)];
     [labelAtletasMesAtual setBackgroundColor:[UIColor clearColor]];
-    [labelAtletasMesAtual setTextColor:[UIColor whiteColor]];
+    [labelAtletasMesAtual setTextColor:[UIColor yellowColor]];
+    [labelAtletasMesAtual setAlpha:(0.8)];
     [labelAtletasMesAtual setFont:[UIFont boldSystemFontOfSize:14]];
     [labelAtletasMesAtual setTextAlignment:NSTextAlignmentCenter];
     [labelAtletasMesAtual setText:[[DataUtils alloc] mesAtual]];
-    [labelAtletasBg addSubview:labelAtletasMesAtual];
+    [labelAtletasFrame addSubview:labelAtletasMesAtual];
     
     UILabel *labelAtletasMesSeguinte = [[UILabel alloc] initWithFrame:CGRectMake(larguraDaTela-40, 0, 30, 15)];
     [labelAtletasMesSeguinte setBackgroundColor:[UIColor clearColor]];
-    [labelAtletasMesSeguinte setTextColor:[UIColor whiteColor]];
+    [labelAtletasMesSeguinte setTextColor:[UIColor yellowColor]];
+    [labelAtletasMesSeguinte setAlpha:(0.8)];
     [labelAtletasMesSeguinte setFont:[UIFont boldSystemFontOfSize:14]];
     [labelAtletasMesSeguinte setTextAlignment:NSTextAlignmentCenter];
     [labelAtletasMesSeguinte setText:[[DataUtils alloc] mesSeguinte]];
-    [labelAtletasBg addSubview:labelAtletasMesSeguinte];
+    [labelAtletasFrame addSubview:labelAtletasMesSeguinte];
     
-    atletasTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 91, larguraDaTela, alturaDaTela-182)];
+    atletasTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 99, larguraDaTela, alturaDaTela-190)];
     [atletasTableView setAllowsSelection:NO];
     [atletasTableView setBackgroundColor:[UIColor blackColor]];
     [atletasTableView setOpaque:YES];
