@@ -14,6 +14,12 @@
 
 @implementation StoreViewController
 
+@synthesize navigationBar;
+@synthesize imagem;
+@synthesize produto;
+@synthesize descricao;
+@synthesize preco;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -27,6 +33,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSDictionary *titulo = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor yellowColor],
+                            UITextAttributeTextColor,
+                            [UIColor clearColor],
+                            UITextAttributeTextShadowColor, nil];
+
+    [self.navigationBar setTitleTextAttributes:titulo];
 }
 
 - (void)didReceiveMemoryWarning

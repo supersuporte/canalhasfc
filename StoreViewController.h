@@ -10,4 +10,10 @@
 
 @interface StoreViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
+@property (weak, nonatomic) IBOutlet UIImageView *imagem;
+@property (weak, nonatomic) IBOutlet UILabel *produto;
+@property (weak, nonatomic) IBOutlet UILabel *descricao;
+@property (weak, nonatomic) IBOutlet UILabel *preco;
+
 @end
