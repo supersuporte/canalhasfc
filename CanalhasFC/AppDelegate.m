@@ -30,6 +30,8 @@
     [financasTabBarItem setTitle:@"Finanças"];
     
     StoreViewController *storeViewController = [[StoreViewController alloc] initWithNibName:@"StoreViewController" bundle:nil];
+    UITabBarItem *storeTabBarItem = [storeViewController tabBarItem];
+    [storeTabBarItem setTitle:@"Store"];
 
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     
