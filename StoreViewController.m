@@ -135,13 +135,22 @@
 
 - (void)montaResultado
 {
-    [self.nome setText:@"ok"];
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setPositiveFormat:@"#,##0.00"];
+    [formatter setGroupingSeparator:@"."];
+    [formatter setDecimalSeparator:@","];
+
     
-    
-    
-    
-    
-    
+    Produto *produto = [produtos objectAtIndex:0];
+
+    NSURL *imgUrl = [NSURL URLWithString:[produto imagem]];
+    NSData *imgData = [NSData dataWithContentsOfURL:imgUrl];
+    UIImage *img = [UIImage imageWithData:imgData];
+    [self.imagem setImage:img];
+
+    [self.nome setText:[produto nome]];
+    [self.descricao setText:[produto descricao]];
+    [self.valor setText:[NSString stringWithFormat:@"%@%@", @"R$ ", [formatter stringFromNumber:[NSNumber numberWithDouble:[[produto valor] doubleValue]]]]];
 }
 
 - (void)didReceiveMemoryWarning
