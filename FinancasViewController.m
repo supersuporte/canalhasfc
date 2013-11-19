@@ -339,7 +339,7 @@
 
 - (void)voltar
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:^(void){}];
 }
 
 - (void)didReceiveMemoryWarning

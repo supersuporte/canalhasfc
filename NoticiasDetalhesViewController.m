@@ -43,7 +43,7 @@
     
     UILabel *titulo = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 300, 0)];
     [titulo setBackgroundColor:[UIColor clearColor]];
-    [titulo setTextAlignment:UITextAlignmentLeft];
+    [titulo setTextAlignment:NSTextAlignmentLeft];
     [titulo setTextColor:[UIColor whiteColor]];
     [titulo setFont:[UIFont boldSystemFontOfSize:16]];
     [titulo setNumberOfLines:3];
@@ -62,7 +62,7 @@
 
     UILabel *texto = [[UILabel alloc] initWithFrame:CGRectMake(10, pos, 300, 500)];
     [texto setBackgroundColor:[UIColor clearColor]];
-    [texto setTextAlignment:UITextAlignmentLeft];
+    [texto setTextAlignment:NSTextAlignmentLeft];
     [texto setTextColor:[UIColor whiteColor]];
     [texto setFont:[UIFont systemFontOfSize:14]];
     [texto setNumberOfLines:0];

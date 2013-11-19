@@ -197,7 +197,7 @@
         UILabel *texto = [[UILabel alloc] initWithFrame:CGRectMake(124, 6, 188, 78)];
         [texto setTag:2];
         [texto setBackgroundColor:[UIColor clearColor]];
-        [texto setTextAlignment:UITextAlignmentLeft];
+        [texto setTextAlignment:NSTextAlignmentLeft];
         [texto setTextColor:[UIColor whiteColor]];
         [texto setFont:[UIFont systemFontOfSize:14]];
         [texto setNumberOfLines:4];
@@ -243,7 +243,7 @@
 
 - (void)voltar
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:^(void){}];
 }
 
 - (void)didReceiveMemoryWarning
