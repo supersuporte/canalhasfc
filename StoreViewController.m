@@ -26,10 +26,8 @@
 @implementation StoreViewController
 
 @synthesize navigationBar;
-@synthesize imagem;
-@synthesize nome;
-@synthesize descricao;
-@synthesize valor;
+@synthesize view01;
+@synthesize view02;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -111,7 +109,7 @@
     [activityIndicator stopAnimating];
 }
 
--(void)connection:(NSURLConnection *)conn didFailWithError:(NSError *)error
+- (void)connection:(NSURLConnection *)conn didFailWithError:(NSError *)error
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [activityIndicator stopAnimating];
@@ -135,22 +133,35 @@
 
 - (void)montaResultado
 {
+    [self setView:[self view01] comProduto:[produtos objectAtIndex:0]];
+}
+
+- (void)setView:(UIView *)view comProduto:(Produto *)produto
+{
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setPositiveFormat:@"#,##0.00"];
     [formatter setGroupingSeparator:@"."];
     [formatter setDecimalSeparator:@","];
-
     
-    Produto *produto = [produtos objectAtIndex:0];
-
+    
     NSURL *imgUrl = [NSURL URLWithString:[produto imagem]];
     NSData *imgData = [NSData dataWithContentsOfURL:imgUrl];
     UIImage *img = [UIImage imageWithData:imgData];
-    [self.imagem setImage:img];
+    [[view.subviews objectAtIndex:0] setImage:img];
+    
+    [[view.subviews objectAtIndex:1] setText:[produto nome]];
+    [[view.subviews objectAtIndex:2] setText:[produto descricao]];
+    [[view.subviews objectAtIndex:2] sizeToFit];
+    [[view.subviews objectAtIndex:3] setText:[NSString stringWithFormat:@"%@%@",
+                                                     @"R$ ",
+                                                     [formatter stringFromNumber:[NSNumber numberWithDouble:[[produto valor] doubleValue]]]]];
+}
 
-    [self.nome setText:[produto nome]];
-    [self.descricao setText:[produto descricao]];
-    [self.valor setText:[NSString stringWithFormat:@"%@%@", @"R$ ", [formatter stringFromNumber:[NSNumber numberWithDouble:[[produto valor] doubleValue]]]]];
+- (IBAction)produtoSeguinte:(id)sender
+{
+    [UIView animateWithDuration:0.2 animations:^{
+        [self.view01 setFrame:CGRectMake(-320, 44, 320, 448)];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
