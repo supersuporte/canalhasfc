@@ -13,7 +13,10 @@
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (weak, nonatomic) IBOutlet UIView *view01;
 @property (weak, nonatomic) IBOutlet UIView *view02;
+@property (weak, nonatomic) IBOutlet UIButton *setaEsquerda;
+@property (weak, nonatomic) IBOutlet UIButton *setaDireita;
 
 - (IBAction)produtoSeguinte:(id)sender;
+- (IBAction)produtoAnterior:(id)sender;
 
 @end

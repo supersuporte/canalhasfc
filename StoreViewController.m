@@ -14,7 +14,8 @@
 @interface StoreViewController ()
 {
     NSMutableArray *produtos;
-    
+    int produtoAtual;
+   
     NSURLConnection *connection;
     NSMutableData *jsonData;
     
@@ -28,6 +29,8 @@
 @synthesize navigationBar;
 @synthesize view01;
 @synthesize view02;
+@synthesize setaEsquerda;
+@synthesize setaDireita;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -134,6 +137,8 @@
 - (void)montaResultado
 {
     [self setView:[self view01] comProduto:[produtos objectAtIndex:0]];
+    produtoAtual = 0;
+    [self verificaSetasDeNavegacao];
 }
 
 - (void)setView:(UIView *)view comProduto:(Produto *)produto
@@ -159,9 +164,89 @@
 
 - (IBAction)produtoSeguinte:(id)sender
 {
-    [UIView animateWithDuration:0.2 animations:^{
-        [self.view01 setFrame:CGRectMake(-320, 44, 320, 448)];
+    produtoAtual++;
+    UIView *viewAtiva = [self getViewAtiva];
+    UIView *viewInativa = [self getViewInativa];
+    
+    [self setView:viewInativa comProduto:[produtos objectAtIndex:produtoAtual]];
+
+    [viewInativa setFrame:CGRectMake(320, 44, 320, 448)];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        [viewAtiva setFrame:CGRectMake(-320, 44, 320, 448)];
     }];
+
+    [UIView animateWithDuration:0.3 animations:^{
+        [viewInativa setFrame:CGRectMake(0, 44, 320, 448)];
+    }];
+    
+    [self verificaSetasDeNavegacao];
+}
+
+- (IBAction)produtoAnterior:(id)sender
+{
+    produtoAtual--;
+    UIView *viewAtiva = [self getViewAtiva];
+    UIView *viewInativa = [self getViewInativa];
+
+    [self setView:[self getViewInativa] comProduto:[produtos objectAtIndex:produtoAtual]];
+    
+    [viewInativa setFrame:CGRectMake(-320, 44, 320, 448)];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        [viewInativa setFrame:CGRectMake(0, 44, 320, 448)];
+    }];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        [viewAtiva setFrame:CGRectMake(320, 44, 320, 448)];
+    }];
+    
+    [self verificaSetasDeNavegacao];
+}
+
+- (UIView *)getViewAtiva
+{
+    if (self.view01.frame.origin.x == 0)
+    {
+        return self.view01;
+    }
+    else
+    {
+        return self.view02;
+    }
+}
+
+- (UIView *)getViewInativa
+{
+    if (self.view01.frame.origin.x != 0)
+    {
+        return self.view01;
+    }
+    else
+    {
+        return self.view02;
+    }
+}
+
+- (void)verificaSetasDeNavegacao
+{
+    if (produtoAtual == 0)
+    {
+        [self.setaEsquerda setHidden:true];
+    }
+    else
+    {
+        [self.setaEsquerda setHidden:false];
+    }
+    
+    if (produtoAtual == [produtos count]-1)
+    {
+        [self.setaDireita setHidden:true];
+    }
+    else
+    {
+        [self.setaDireita setHidden:false];
+    }
 }
 
 - (void)didReceiveMemoryWarning
