@@ -118,7 +118,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{30, 417}, {260, 21}}</string>
 								<reference key="NSSuperview" ref="614741747"/>
-								<reference key="NSNextKeyView" ref="288528180"/>
+								<reference key="NSNextKeyView" ref="378330189"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -250,9 +250,9 @@
 							</object>
 						</array>
 					</object>
-					<object class="IBUIButton" id="288528180">
+					<object class="IBUIButton" id="378330189">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">-2147483356</int>
 						<string key="NSFrame">{{4, 172}, {23, 35}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSNextKeyView" ref="924990120"/>
@@ -265,11 +265,11 @@
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">setaEsquerdaStore.png</string>
 						</object>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="385905674">
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="745539257">
 							<int key="type">2</int>
 							<double key="pointSize">15</double>
 						</object>
-						<object class="NSFont" key="IBUIFont" id="101795434">
+						<object class="NSFont" key="IBUIFont" id="807510530">
 							<string key="NSName">HelveticaNeue-Bold</string>
 							<double key="NSSize">15</double>
 							<int key="NSfFlags">16</int>
@@ -277,7 +277,7 @@
 					</object>
 					<object class="IBUIButton" id="924990120">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">-2147483356</int>
 						<string key="NSFrame">{{293, 172}, {23, 35}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSNextKeyView" ref="105231051"/>
@@ -290,8 +290,8 @@
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">setaDireitaStore.png</string>
 						</object>
-						<reference key="IBUIFontDescription" ref="385905674"/>
-						<reference key="IBUIFont" ref="101795434"/>
+						<reference key="IBUIFontDescription" ref="745539257"/>
+						<reference key="IBUIFont" ref="807510530"/>
 					</object>
 				</array>
 				<string key="NSFrame">{{0, 20}, {320, 548}}</string>
@@ -355,7 +355,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">setaEsquerda</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="288528180"/>
+						<reference key="destination" ref="378330189"/>
 					</object>
 					<int key="connectionID">197</int>
 				</object>
@@ -379,7 +379,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">produtoAnterior:</string>
-						<reference key="source" ref="288528180"/>
+						<reference key="source" ref="378330189"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -402,7 +402,7 @@
 							<reference ref="924990120"/>
 							<reference ref="614741747"/>
 							<reference ref="105231051"/>
-							<reference ref="288528180"/>
+							<reference ref="378330189"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -500,7 +500,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">194</int>
-						<reference key="object" ref="288528180"/>
+						<reference key="object" ref="378330189"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>

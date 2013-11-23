@@ -11,6 +11,7 @@
 
 @interface Conexao : NSObject
 
+- (NSString *)webServices;
 - (BOOL)conexaoComInternet;
 - (BOOL)conexaoComWebServices;
 

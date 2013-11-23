@@ -12,6 +12,12 @@
 
 @implementation Conexao
 
+- (NSString *)webServices
+{
+    return [NSString stringWithFormat:@"http://www.supersuporte.com.br/canalhasfc/"];
+    //return [NSString stringWithFormat:@"http://127.0.0.1/canalhasfc/noticias.json"];
+}
+
 - (BOOL)conexaoComInternet
 {
     if ([self conectadoAInternet] == FALSE) {
