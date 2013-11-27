@@ -46,7 +46,7 @@
     [titulo setTextAlignment:NSTextAlignmentLeft];
     [titulo setTextColor:[UIColor whiteColor]];
     [titulo setFont:[UIFont boldSystemFontOfSize:16]];
-    [titulo setNumberOfLines:3];
+    [titulo setNumberOfLines:5];
     [titulo setText:[noticia titulo]];
     [titulo sizeToFit];
     [scrollView addSubview:titulo];

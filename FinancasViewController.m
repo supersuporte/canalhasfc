@@ -230,36 +230,32 @@
     [labelAtletasFrame setBackgroundColor:[UIColor clearColor]];
     [self.view addSubview:labelAtletasFrame];
 
-    UILabel *labelAtletas = [[UILabel alloc] initWithFrame:CGRectMake(6, 0, 100, 15)];
+    UILabel *labelAtletas = [[UILabel alloc] initWithFrame:CGRectMake(6, 1, 100, 15)];
     [labelAtletas setBackgroundColor:[UIColor clearColor]];
     [labelAtletas setTextColor:[UIColor yellowColor]];
-    [labelAtletas setAlpha:(0.8)];
     [labelAtletas setFont:[UIFont boldSystemFontOfSize:14]];
     [labelAtletas setText:@"Atletas"];
     [labelAtletasFrame addSubview:labelAtletas];
     
-    UILabel *labelAtletasMesAnterior = [[UILabel alloc] initWithFrame:CGRectMake(larguraDaTela-120, 0, 30, 15)];
+    UILabel *labelAtletasMesAnterior = [[UILabel alloc] initWithFrame:CGRectMake(larguraDaTela-120, 1, 30, 15)];
     [labelAtletasMesAnterior setBackgroundColor:[UIColor clearColor]];
     [labelAtletasMesAnterior setTextColor:[UIColor yellowColor]];
-    [labelAtletasMesAnterior setAlpha:(0.8)];
     [labelAtletasMesAnterior setFont:[UIFont boldSystemFontOfSize:14]];
     [labelAtletasMesAnterior setTextAlignment:NSTextAlignmentCenter];
     [labelAtletasMesAnterior setText:[[DataUtils alloc] mesAnterior]];
     [labelAtletasFrame addSubview:labelAtletasMesAnterior];
     
-    UILabel *labelAtletasMesAtual = [[UILabel alloc] initWithFrame:CGRectMake(larguraDaTela-80, 0, 30, 15)];
+    UILabel *labelAtletasMesAtual = [[UILabel alloc] initWithFrame:CGRectMake(larguraDaTela-80, 1, 30, 15)];
     [labelAtletasMesAtual setBackgroundColor:[UIColor clearColor]];
     [labelAtletasMesAtual setTextColor:[UIColor yellowColor]];
-    [labelAtletasMesAtual setAlpha:(0.8)];
     [labelAtletasMesAtual setFont:[UIFont boldSystemFontOfSize:14]];
     [labelAtletasMesAtual setTextAlignment:NSTextAlignmentCenter];
     [labelAtletasMesAtual setText:[[DataUtils alloc] mesAtual]];
     [labelAtletasFrame addSubview:labelAtletasMesAtual];
     
-    UILabel *labelAtletasMesSeguinte = [[UILabel alloc] initWithFrame:CGRectMake(larguraDaTela-40, 0, 30, 15)];
+    UILabel *labelAtletasMesSeguinte = [[UILabel alloc] initWithFrame:CGRectMake(larguraDaTela-40, 1, 30, 15)];
     [labelAtletasMesSeguinte setBackgroundColor:[UIColor clearColor]];
     [labelAtletasMesSeguinte setTextColor:[UIColor yellowColor]];
-    [labelAtletasMesSeguinte setAlpha:(0.8)];
     [labelAtletasMesSeguinte setFont:[UIFont boldSystemFontOfSize:14]];
     [labelAtletasMesSeguinte setTextAlignment:NSTextAlignmentCenter];
     [labelAtletasMesSeguinte setText:[[DataUtils alloc] mesSeguinte]];
@@ -303,15 +299,15 @@
                 reuseIdentifier:cellIdentifier];
         [cell.textLabel setTextColor:[UIColor whiteColor]];
         
-        UIImageView *icoMesAnterior = [[UIImageView alloc] initWithFrame:CGRectMake(larguraDaTela-110, 14, 15, 15)];
+        UIImageView *icoMesAnterior = [[UIImageView alloc] initWithFrame:CGRectMake(larguraDaTela-111, 14, 15, 15)];
         [icoMesAnterior setTag:1];
         [cell.contentView addSubview:icoMesAnterior];
 
-        UIImageView *icoMesAtual = [[UIImageView alloc] initWithFrame:CGRectMake(larguraDaTela-70, 14, 15, 15)];
+        UIImageView *icoMesAtual = [[UIImageView alloc] initWithFrame:CGRectMake(larguraDaTela-71, 14, 15, 15)];
         [icoMesAtual setTag:2];
         [cell.contentView addSubview:icoMesAtual];
 
-        UIImageView *icoMesSeguinte = [[UIImageView alloc] initWithFrame:CGRectMake(larguraDaTela-30, 14, 15, 15)];
+        UIImageView *icoMesSeguinte = [[UIImageView alloc] initWithFrame:CGRectMake(larguraDaTela-31, 14, 15, 15)];
         [icoMesSeguinte setTag:3];
         [cell.contentView addSubview:icoMesSeguinte];
 	}
