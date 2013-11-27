@@ -22,6 +22,8 @@
 		071C0C2417CFBF9900DA4339 /* FinancasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071C0C2217CFBF9900DA4339 /* FinancasViewController.xib */; };
 		071C0C2817CFBFAC00DA4339 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 071C0C2617CFBFAC00DA4339 /* StoreViewController.m */; };
 		071C0C2917CFBFAC00DA4339 /* StoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071C0C2717CFBFAC00DA4339 /* StoreViewController.xib */; };
+		0724E4141846A7EF00E13D1D /* titleFinancas.png in Resources */ = {isa = PBXBuildFile; fileRef = 0724E4121846A7EF00E13D1D /* titleFinancas.png */; };
+		0724E4151846A7EF00E13D1D /* titleStore.png in Resources */ = {isa = PBXBuildFile; fileRef = 0724E4131846A7EF00E13D1D /* titleStore.png */; };
 		07255217180F6FA300BA2562 /* ProdutoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 07255216180F6FA300BA2562 /* ProdutoUtils.m */; };
 		0753EAE517E93764007CA338 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0753EAE417E93764007CA338 /* README.md */; };
 		078E795117CC26D800BD4C53 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078E795017CC26D800BD4C53 /* UIKit.framework */; };
@@ -33,6 +35,7 @@
 		078E796317CC26D800BD4C53 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 078E796217CC26D800BD4C53 /* Default.png */; };
 		078E796517CC26D800BD4C53 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 078E796417CC26D800BD4C53 /* Default@2x.png */; };
 		078E796717CC26D800BD4C53 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 078E796617CC26D800BD4C53 /* Default-568h@2x.png */; };
+		07CD1FAF184578DB0090D27C /* titleNoticias.png in Resources */ = {isa = PBXBuildFile; fileRef = 07CD1FAE184578DB0090D27C /* titleNoticias.png */; };
 		07D4EF9F17F3C786005E2729 /* AtletaUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D4EF9E17F3C786005E2729 /* AtletaUtils.m */; };
 		07E5E40617FA5B2A00A8575F /* ballRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E5E40517FA5B2A00A8575F /* ballRed.png */; };
 		07E5E40917FA5DA600A8575F /* ballGray.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E5E40717FA5DA600A8575F /* ballGray.png */; };
@@ -70,6 +73,8 @@
 		071C0C2517CFBFAC00DA4339 /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
 		071C0C2617CFBFAC00DA4339 /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		071C0C2717CFBFAC00DA4339 /* StoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreViewController.xib; sourceTree = "<group>"; };
+		0724E4121846A7EF00E13D1D /* titleFinancas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleFinancas.png; sourceTree = SOURCE_ROOT; };
+		0724E4131846A7EF00E13D1D /* titleStore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleStore.png; sourceTree = SOURCE_ROOT; };
 		07255215180F6FA200BA2562 /* ProdutoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProdutoUtils.h; sourceTree = "<group>"; };
 		07255216180F6FA300BA2562 /* ProdutoUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProdutoUtils.m; sourceTree = "<group>"; };
 		0753EAE417E93764007CA338 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -86,6 +91,7 @@
 		078E796217CC26D800BD4C53 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		078E796417CC26D800BD4C53 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		078E796617CC26D800BD4C53 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		07CD1FAE184578DB0090D27C /* titleNoticias.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleNoticias.png; sourceTree = SOURCE_ROOT; };
 		07D4EF9D17F3C786005E2729 /* AtletaUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtletaUtils.h; sourceTree = "<group>"; };
 		07D4EF9E17F3C786005E2729 /* AtletaUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtletaUtils.m; sourceTree = "<group>"; };
 		07E5E40517FA5B2A00A8575F /* ballRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ballRed.png; path = ../ballRed.png; sourceTree = "<group>"; };
@@ -227,6 +233,9 @@
 		07FD424D17DA55B3007B93EF /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				07CD1FAE184578DB0090D27C /* titleNoticias.png */,
+				0724E4121846A7EF00E13D1D /* titleFinancas.png */,
+				0724E4131846A7EF00E13D1D /* titleStore.png */,
 				07FD424E17DA5867007B93EF /* setaDireita.png */,
 				070E6B99183D267C00D8F94B /* setaDireitaStore.png */,
 				070E6B9A183D267C00D8F94B /* setaEsquerdaStore.png */,
@@ -288,6 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07CD1FAF184578DB0090D27C /* titleNoticias.png in Resources */,
 				078E795B17CC26D800BD4C53 /* InfoPlist.strings in Resources */,
 				078E796317CC26D800BD4C53 /* Default.png in Resources */,
 				078E796517CC26D800BD4C53 /* Default@2x.png in Resources */,
@@ -296,8 +306,10 @@
 				071C0C1F17CFBF7C00DA4339 /* NoticiasViewController.xib in Resources */,
 				071C0C2417CFBF9900DA4339 /* FinancasViewController.xib in Resources */,
 				071C0C2917CFBFAC00DA4339 /* StoreViewController.xib in Resources */,
+				0724E4141846A7EF00E13D1D /* titleFinancas.png in Resources */,
 				07FD424817DA50D0007B93EF /* NoticiasDetalhesViewController.xib in Resources */,
 				07FD424F17DA5867007B93EF /* setaDireita.png in Resources */,
+				0724E4151846A7EF00E13D1D /* titleStore.png in Resources */,
 				070E6B9B183D267C00D8F94B /* setaDireitaStore.png in Resources */,
 				0753EAE517E93764007CA338 /* README.md in Resources */,
 				07E5E40617FA5B2A00A8575F /* ballRed.png in Resources */,

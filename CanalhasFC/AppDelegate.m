@@ -30,12 +30,13 @@
     [financasTabBarItem setTitle:@"Finanças"];
     
     StoreViewController *storeViewController = [[StoreViewController alloc] initWithNibName:@"StoreViewController" bundle:nil];
-    UITabBarItem *storeTabBarItem = [storeViewController tabBarItem];
+    UINavigationController *storeNavigationController = [[UINavigationController alloc] initWithRootViewController:storeViewController];
+    UITabBarItem *storeTabBarItem = [storeNavigationController tabBarItem];
     [storeTabBarItem setTitle:@"Store"];
 
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     
-    NSArray *viewControllers = [NSArray arrayWithObjects:noticiasNavigationController, financasNavigationController, storeViewController, nil];
+    NSArray *viewControllers = [NSArray arrayWithObjects:noticiasNavigationController, financasNavigationController, storeNavigationController, nil];
     [tabBarController setViewControllers:viewControllers];
     
     [self.window setRootViewController:tabBarController];

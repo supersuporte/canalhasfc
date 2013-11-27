@@ -44,12 +44,24 @@
 {
     [super viewDidLoad];
     
-    NSDictionary *titulo = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor yellowColor],
-                            UITextAttributeTextColor,
-                            [UIColor clearColor],
-                            UITextAttributeTextShadowColor, nil];
-
-    [self.navigationBar setTitleTextAttributes:titulo];
+    UIBarButtonItem *voltar = [[UIBarButtonItem alloc] initWithTitle:@"Voltar"
+                                                               style:UIBarButtonItemStyleDone
+                                                              target:self
+                                                              action:@selector(voltar)];
+    self.navigationItem.backBarButtonItem = voltar;
+    
+    UIImage *titulo = [UIImage imageNamed:@"titleStore"];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:titulo];
+    
+    [self.view setBackgroundColor:[UIColor blackColor]];
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    
+    NSDictionary *storeNCTitulo = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor yellowColor],
+                                      UITextAttributeTextColor,
+                                      [UIColor clearColor],
+                                      UITextAttributeTextShadowColor, nil];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:storeNCTitulo];
 
     
     activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
@@ -169,14 +181,14 @@
     
     [self setView:viewInativa comProduto:[produtos objectAtIndex:produtoAtual]];
 
-    [viewInativa setFrame:CGRectMake(320, 44, 320, 448)];
+    [viewInativa setFrame:CGRectMake(320, 0, 320, 448)];
     
     [UIView animateWithDuration:0.3 animations:^{
-        [viewAtiva setFrame:CGRectMake(-320, 44, 320, 448)];
+        [viewAtiva setFrame:CGRectMake(-320, 0, 320, 448)];
     }];
 
     [UIView animateWithDuration:0.3 animations:^{
-        [viewInativa setFrame:CGRectMake(0, 44, 320, 448)];
+        [viewInativa setFrame:CGRectMake(0, 0, 320, 448)];
     }];
     
     [self verificaSetasDeNavegacao];
@@ -190,14 +202,14 @@
 
     [self setView:[self getViewInativa] comProduto:[produtos objectAtIndex:produtoAtual]];
     
-    [viewInativa setFrame:CGRectMake(-320, 44, 320, 448)];
+    [viewInativa setFrame:CGRectMake(-320, 0, 320, 448)];
     
     [UIView animateWithDuration:0.3 animations:^{
-        [viewInativa setFrame:CGRectMake(0, 44, 320, 448)];
+        [viewInativa setFrame:CGRectMake(0, 0, 320, 448)];
     }];
     
     [UIView animateWithDuration:0.3 animations:^{
-        [viewAtiva setFrame:CGRectMake(320, 44, 320, 448)];
+        [viewAtiva setFrame:CGRectMake(320, 0, 320, 448)];
     }];
     
     [self verificaSetasDeNavegacao];

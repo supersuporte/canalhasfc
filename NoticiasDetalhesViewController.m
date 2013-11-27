@@ -24,7 +24,10 @@
     imagem = _imagem;
     
     self = [super initWithNibName:@"NoticiasDetalhesViewController" bundle:[NSBundle mainBundle]];
-    [self setTitle:@"Notícias"];
+    
+    UIImage *titulo = [UIImage imageNamed:@"titleNoticias"];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:titulo];
+
     [self.view setBackgroundColor:[UIColor blackColor]];
 
     return self;

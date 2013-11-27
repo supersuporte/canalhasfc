@@ -51,7 +51,9 @@
                                                        action:@selector(voltar)];
     self.navigationItem.backBarButtonItem = voltar;
 
-    [self setTitle:@"Notícias"];
+    UIImage *titulo = [UIImage imageNamed:@"titleNoticias"];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:titulo];
+
     [self.view setBackgroundColor:[UIColor blackColor]];
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     
