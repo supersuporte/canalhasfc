@@ -23,17 +23,20 @@
     UINavigationController *noticiasNavigationController = [[UINavigationController alloc] initWithRootViewController:noticiasViewController];
     UITabBarItem *noticiasTabBarItem = [noticiasNavigationController tabBarItem];
     [noticiasTabBarItem setTitle:@"Notícias"];
+    [noticiasTabBarItem setImage:[UIImage imageNamed:@"setaDireita"]];
 
     FinancasViewController *financasViewController = [[FinancasViewController alloc] initWithNibName:@"FinancasViewController" bundle:nil];
     UINavigationController *financasNavigationController = [[UINavigationController alloc] initWithRootViewController:financasViewController];
     UITabBarItem *financasTabBarItem = [financasNavigationController tabBarItem];
     [financasTabBarItem setTitle:@"Finanças"];
+    [financasTabBarItem setImage:[UIImage imageNamed:@"setaDireita"]];
     
     StoreViewController *storeViewController = [[StoreViewController alloc] initWithNibName:@"StoreViewController" bundle:nil];
     UINavigationController *storeNavigationController = [[UINavigationController alloc] initWithRootViewController:storeViewController];
     UITabBarItem *storeTabBarItem = [storeNavigationController tabBarItem];
     [storeTabBarItem setTitle:@"Store"];
-
+    [storeTabBarItem setImage:[UIImage imageNamed:@"setaDireita"]];
+    
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     
     NSArray *viewControllers = [NSArray arrayWithObjects:noticiasNavigationController, financasNavigationController, storeNavigationController, nil];
