@@ -25,7 +25,10 @@
 		0724E4141846A7EF00E13D1D /* titleFinancas.png in Resources */ = {isa = PBXBuildFile; fileRef = 0724E4121846A7EF00E13D1D /* titleFinancas.png */; };
 		0724E4151846A7EF00E13D1D /* titleStore.png in Resources */ = {isa = PBXBuildFile; fileRef = 0724E4131846A7EF00E13D1D /* titleStore.png */; };
 		07255217180F6FA300BA2562 /* ProdutoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 07255216180F6FA300BA2562 /* ProdutoUtils.m */; };
+		07336B78184D5BF50062B704 /* tabBarStore.png in Resources */ = {isa = PBXBuildFile; fileRef = 07336B77184D5BF50062B704 /* tabBarStore.png */; };
 		0753EAE517E93764007CA338 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0753EAE417E93764007CA338 /* README.md */; };
+		0757584E184D61C100715578 /* tabBarFinancas.png in Resources */ = {isa = PBXBuildFile; fileRef = 0757584D184D61C100715578 /* tabBarFinancas.png */; };
+		07575850184D639900715578 /* tabBarNoticias.png in Resources */ = {isa = PBXBuildFile; fileRef = 0757584F184D639900715578 /* tabBarNoticias.png */; };
 		078E795117CC26D800BD4C53 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078E795017CC26D800BD4C53 /* UIKit.framework */; };
 		078E795317CC26D800BD4C53 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078E795217CC26D800BD4C53 /* Foundation.framework */; };
 		078E795517CC26D800BD4C53 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078E795417CC26D800BD4C53 /* CoreGraphics.framework */; };
@@ -77,7 +80,10 @@
 		0724E4131846A7EF00E13D1D /* titleStore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleStore.png; sourceTree = SOURCE_ROOT; };
 		07255215180F6FA200BA2562 /* ProdutoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProdutoUtils.h; sourceTree = "<group>"; };
 		07255216180F6FA300BA2562 /* ProdutoUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProdutoUtils.m; sourceTree = "<group>"; };
+		07336B77184D5BF50062B704 /* tabBarStore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarStore.png; sourceTree = SOURCE_ROOT; };
 		0753EAE417E93764007CA338 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		0757584D184D61C100715578 /* tabBarFinancas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarFinancas.png; sourceTree = SOURCE_ROOT; };
+		0757584F184D639900715578 /* tabBarNoticias.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarNoticias.png; sourceTree = SOURCE_ROOT; };
 		078E794C17CC26D800BD4C53 /* CanalhasFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanalhasFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		078E795017CC26D800BD4C53 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		078E795217CC26D800BD4C53 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -236,6 +242,9 @@
 				07CD1FAE184578DB0090D27C /* titleNoticias.png */,
 				0724E4121846A7EF00E13D1D /* titleFinancas.png */,
 				0724E4131846A7EF00E13D1D /* titleStore.png */,
+				0757584F184D639900715578 /* tabBarNoticias.png */,
+				0757584D184D61C100715578 /* tabBarFinancas.png */,
+				07336B77184D5BF50062B704 /* tabBarStore.png */,
 				07FD424E17DA5867007B93EF /* setaDireita.png */,
 				070E6B99183D267C00D8F94B /* setaDireitaStore.png */,
 				070E6B9A183D267C00D8F94B /* setaEsquerdaStore.png */,
@@ -297,11 +306,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0757584E184D61C100715578 /* tabBarFinancas.png in Resources */,
 				07CD1FAF184578DB0090D27C /* titleNoticias.png in Resources */,
 				078E795B17CC26D800BD4C53 /* InfoPlist.strings in Resources */,
 				078E796317CC26D800BD4C53 /* Default.png in Resources */,
 				078E796517CC26D800BD4C53 /* Default@2x.png in Resources */,
 				070E6B9C183D267C00D8F94B /* setaEsquerdaStore.png in Resources */,
+				07336B78184D5BF50062B704 /* tabBarStore.png in Resources */,
+				07575850184D639900715578 /* tabBarNoticias.png in Resources */,
 				078E796717CC26D800BD4C53 /* Default-568h@2x.png in Resources */,
 				071C0C1F17CFBF7C00DA4339 /* NoticiasViewController.xib in Resources */,
 				071C0C2417CFBF9900DA4339 /* FinancasViewController.xib in Resources */,
