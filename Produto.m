@@ -18,10 +18,13 @@
 - (id)initWithDicionario:(NSDictionary *)dicionario
 {
     [self setNome:[dicionario objectForKey:@"nome"]];
-    [self setImagem:[dicionario objectForKey:@"imagem"]];
     [self setDescricao:[dicionario objectForKey:@"descricao"]];
     [self setValor:[dicionario objectForKey:@"valor"]];
     
+    NSURL *imgUrl = [NSURL URLWithString:[dicionario objectForKey:@"imagem"]];
+    NSData *imgData = [NSData dataWithContentsOfURL:imgUrl];
+    [self setImagem:[UIImage imageWithData:imgData]];
+
     return self;
 }
 

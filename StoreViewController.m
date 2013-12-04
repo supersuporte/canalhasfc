@@ -159,12 +159,7 @@
     [formatter setGroupingSeparator:@"."];
     [formatter setDecimalSeparator:@","];
     
-    
-    NSURL *imgUrl = [NSURL URLWithString:[produto imagem]];
-    NSData *imgData = [NSData dataWithContentsOfURL:imgUrl];
-    UIImage *img = [UIImage imageWithData:imgData];
-    [[view.subviews objectAtIndex:0] setImage:img];
-    
+    [[view.subviews objectAtIndex:0] setImage:[produto imagem]];
     [[view.subviews objectAtIndex:1] setText:[produto nome]];
     [[view.subviews objectAtIndex:2] setText:[produto descricao]];
     [[view.subviews objectAtIndex:2] sizeToFit];

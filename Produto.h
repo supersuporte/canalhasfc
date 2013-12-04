@@ -11,7 +11,7 @@
 @interface Produto : NSObject
 
 @property (strong, nonatomic) NSString *nome;
-@property (strong, nonatomic) NSString *imagem;
+@property (strong, nonatomic) UIImage *imagem;
 @property (strong, nonatomic) NSString *descricao;
 @property (strong, nonatomic) NSDecimalNumber *valor;
 
