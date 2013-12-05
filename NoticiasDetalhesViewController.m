@@ -12,6 +12,9 @@
 {
     Noticia *noticia;
     UIImage *imagem;
+    
+    float larguraDaTela;
+    float alturaDaTela;
 }
 
 @end
@@ -36,10 +39,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    larguraDaTela = [[UIScreen mainScreen] bounds].size.width;
+    alturaDaTela =  [[UIScreen mainScreen] bounds].size.height;
     
     CGFloat pos;
-    
-    CGRect dimensoes = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+
+    CGRect dimensoes = CGRectMake(0, 0, larguraDaTela, alturaDaTela-112);
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:dimensoes];
     [scrollView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
     [self.view addSubview:scrollView];
@@ -74,13 +79,8 @@
     [scrollView addSubview:texto];
     pos += texto.frame.size.height;
     
-    if ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] &&
-        ([UIScreen mainScreen].scale == 2.0)) {
-        pos += 120;
-    } else {
-        pos += 200;
-    }
-    [scrollView setContentSize:CGSizeMake(self.view.frame.size.width, pos)];
+    pos += 50;
+    [scrollView setContentSize:CGSizeMake(larguraDaTela, pos)];
 }
 
 - (void)didReceiveMemoryWarning

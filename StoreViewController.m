@@ -20,6 +20,9 @@
     NSMutableData *jsonData;
     
     UIActivityIndicatorView *activityIndicator;
+    
+    float larguraDaTela;
+    float alturaDaTela;
 }
 
 @end
@@ -40,10 +43,30 @@
     return self;
 }
 
+- (void)redimensionaTela
+{
+    [[self.view01.subviews objectAtIndex:0] setFrame:CGRectMake(55, 5, 210, 210)];
+    [[self.view01.subviews objectAtIndex:1] setFrame:CGRectMake(30, 220, 260, 23)];
+    [[self.view01.subviews objectAtIndex:2] setFrame:CGRectMake(30, 247, 265, 94)];
+    [[self.view01.subviews objectAtIndex:3] setFrame:CGRectMake(30, 329, 260, 21)];
+
+    [[self.view02.subviews objectAtIndex:0] setFrame:CGRectMake(55, 5, 210, 210)];
+    [[self.view02.subviews objectAtIndex:1] setFrame:CGRectMake(30, 220, 260, 23)];
+    [[self.view02.subviews objectAtIndex:2] setFrame:CGRectMake(30, 247, 265, 94)];
+    [[self.view02.subviews objectAtIndex:3] setFrame:CGRectMake(30, 329, 260, 21)];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    larguraDaTela = [[UIScreen mainScreen] bounds].size.width;
+    alturaDaTela = [[UIScreen mainScreen] bounds].size.height;
     
+    if (alturaDaTela == 480)
+    {
+        [self redimensionaTela];
+    }
+
     UIBarButtonItem *voltar = [[UIBarButtonItem alloc] initWithTitle:@"Voltar"
                                                                style:UIBarButtonItemStyleDone
                                                               target:self
@@ -159,6 +182,7 @@
     [formatter setGroupingSeparator:@"."];
     [formatter setDecimalSeparator:@","];
     
+    
     [[view.subviews objectAtIndex:0] setImage:[produto imagem]];
     [[view.subviews objectAtIndex:1] setText:[produto nome]];
     [[view.subviews objectAtIndex:2] setText:[produto descricao]];
@@ -167,6 +191,7 @@
                                                      @"R$ ",
                                                      [formatter stringFromNumber:[NSNumber numberWithDouble:[[produto valor] doubleValue]]]]];
 }
+
 
 - (IBAction)produtoSeguinte:(id)sender
 {

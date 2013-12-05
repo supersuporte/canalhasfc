@@ -43,8 +43,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    larguraDaTela = self.view.frame.size.width;
-    alturaDaTela = self.view.frame.size.height;
+    larguraDaTela = [[UIScreen mainScreen] bounds].size.width;
+    alturaDaTela =  [[UIScreen mainScreen] bounds].size.height;
 
     UIBarButtonItem *voltar = [[UIBarButtonItem alloc] initWithTitle:@"Voltar"
                                                        style:UIBarButtonItemStyleDone
@@ -263,7 +263,7 @@
     [labelAtletasMesSeguinte setText:[[DataUtils alloc] mesSeguinte]];
     [labelAtletasFrame addSubview:labelAtletasMesSeguinte];
     
-    atletasTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 99, larguraDaTela, alturaDaTela-190)];
+    atletasTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 99, larguraDaTela, alturaDaTela-211)];
     [atletasTableView setAllowsSelection:NO];
     [atletasTableView setBackgroundColor:[UIColor blackColor]];
     [atletasTableView setOpaque:YES];

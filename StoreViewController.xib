@@ -54,7 +54,7 @@
 							<object class="IBUILabel" id="47269198">
 								<reference key="NSNextResponder" ref="614741747"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{30, 283}, {260, 23}}</string>
+								<string key="NSFrame">{{30, 303}, {260, 23}}</string>
 								<reference key="NSSuperview" ref="614741747"/>
 								<reference key="NSNextKeyView" ref="1069647477"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -86,7 +86,7 @@
 							<object class="IBUILabel" id="1069647477">
 								<reference key="NSNextResponder" ref="614741747"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{30, 315}, {265, 94}}</string>
+								<string key="NSFrame">{{30, 335}, {265, 94}}</string>
 								<reference key="NSSuperview" ref="614741747"/>
 								<reference key="NSNextKeyView" ref="158630565"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -98,7 +98,7 @@
 								<string key="IBUIText"/>
 								<reference key="IBUITextColor" ref="601794333"/>
 								<nil key="IBUIHighlightedColor"/>
-								<int key="IBUINumberOfLines">5</int>
+								<int key="IBUINumberOfLines">4</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription" id="229391431">
 									<int key="type">1</int>
 									<double key="pointSize">14</double>
@@ -166,7 +166,7 @@
 							<object class="IBUILabel" id="718082530">
 								<reference key="NSNextResponder" ref="105231051"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{30, 283}, {260, 23}}</string>
+								<string key="NSFrame">{{30, 303}, {260, 23}}</string>
 								<reference key="NSSuperview" ref="105231051"/>
 								<reference key="NSNextKeyView" ref="416294843"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -186,7 +186,7 @@
 							<object class="IBUILabel" id="416294843">
 								<reference key="NSNextResponder" ref="105231051"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{30, 315}, {265, 94}}</string>
+								<string key="NSFrame">{{30, 335}, {265, 94}}</string>
 								<reference key="NSSuperview" ref="105231051"/>
 								<reference key="NSNextKeyView" ref="746382282"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -275,7 +275,7 @@
 						<reference key="IBUIFont" ref="807510530"/>
 					</object>
 				</array>
-				<string key="NSFrame">{{0, 20}, {320, 548}}</string>
+				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
 				<reference key="NSNextKeyView" ref="614741747"/>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<object class="IBUIScreenMetrics" key="IBUISimulatedDestinationMetrics">
@@ -287,13 +287,13 @@
 							<integer value="3"/>
 						</array>
 						<array key="dict.values">
-							<string>{320, 568}</string>
-							<string>{568, 320}</string>
+							<string>{320, 480}</string>
+							<string>{480, 320}</string>
 						</array>
 					</object>
 					<string key="IBUITargetRuntime">IBCocoaTouchFramework</string>
-					<string key="IBUIDisplayName">Retina 4-inch Full Screen</string>
-					<int key="IBUIType">2</int>
+					<string key="IBUIDisplayName">Retina 3.5-inch Full Screen</string>
+					<int key="IBUIType">0</int>
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
