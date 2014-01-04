@@ -53,7 +53,7 @@
     [titulo setBackgroundColor:[UIColor clearColor]];
     [titulo setTextAlignment:NSTextAlignmentLeft];
     [titulo setTextColor:[UIColor whiteColor]];
-    [titulo setFont:[UIFont boldSystemFontOfSize:16]];
+    [titulo setFont:[UIFont boldSystemFontOfSize:18]];
     [titulo setNumberOfLines:5];
     [titulo setText:[noticia titulo]];
     [titulo sizeToFit];
@@ -72,7 +72,7 @@
     [texto setBackgroundColor:[UIColor clearColor]];
     [texto setTextAlignment:NSTextAlignmentLeft];
     [texto setTextColor:[UIColor whiteColor]];
-    [texto setFont:[UIFont systemFontOfSize:14]];
+    [texto setFont:[UIFont systemFontOfSize:16]];
     [texto setNumberOfLines:0];
     [texto setText:[noticia texto]];
     [texto sizeToFit];

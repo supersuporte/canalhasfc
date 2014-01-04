@@ -196,12 +196,12 @@
         [cell.contentView addSubview:imagem];
 
 
-        UILabel *texto = [[UILabel alloc] initWithFrame:CGRectMake(124, 6, 188, 78)];
+        UILabel *texto = [[UILabel alloc] initWithFrame:CGRectMake(124, 5, 188, 78)];
         [texto setTag:2];
         [texto setBackgroundColor:[UIColor clearColor]];
         [texto setTextAlignment:NSTextAlignmentLeft];
         [texto setTextColor:[UIColor whiteColor]];
-        [texto setFont:[UIFont systemFontOfSize:14]];
+        [texto setFont:[UIFont systemFontOfSize:16]];
         [texto setNumberOfLines:4];
         [cell.contentView addSubview:texto];
 	}

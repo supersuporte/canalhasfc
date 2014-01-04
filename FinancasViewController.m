@@ -164,15 +164,15 @@
     UILabel *labelSaldoAtual = [[UILabel alloc] initWithFrame:CGRectMake(6, 6, 120, 15)];
     [labelSaldoAtual setBackgroundColor:[UIColor clearColor]];
     [labelSaldoAtual setTextColor:[UIColor whiteColor]];
-    [labelSaldoAtual setFont:[UIFont systemFontOfSize:14]];
+    [labelSaldoAtual setFont:[UIFont systemFontOfSize:16]];
     [labelSaldoAtual setText:@"Saldo Atual:"];
     [self.view addSubview:labelSaldoAtual];
     
     double saldoAtual = [[financa saldoAtual] doubleValue];
-    UILabel *valorSaldoAtual = [[UILabel alloc] initWithFrame:CGRectMake(100, 6, 90, 15)];
+    UILabel *valorSaldoAtual = [[UILabel alloc] initWithFrame:CGRectMake(120, 6, 90, 15)];
     [valorSaldoAtual setBackgroundColor:[UIColor clearColor]];
     [valorSaldoAtual setTextColor:[UIColor whiteColor]];
-    [valorSaldoAtual setFont:[UIFont systemFontOfSize:14]];
+    [valorSaldoAtual setFont:[UIFont systemFontOfSize:16]];
     [valorSaldoAtual setTextAlignment:NSTextAlignmentRight];
     [valorSaldoAtual setText:[NSString stringWithFormat:@"%@%@", @"R$ ", [formatter stringFromNumber:[NSNumber numberWithDouble:saldoAtual]]]];
     [self.view addSubview:valorSaldoAtual];
@@ -181,36 +181,36 @@
     UILabel *labelCaixa = [[UILabel alloc] initWithFrame:CGRectMake(6, 26, 120, 15)];
     [labelCaixa setBackgroundColor:[UIColor clearColor]];
     [labelCaixa setTextColor:[UIColor whiteColor]];
-    [labelCaixa setFont:[UIFont systemFontOfSize:14]];
+    [labelCaixa setFont:[UIFont systemFontOfSize:16]];
     [labelCaixa setText:@"Caixa:"];
     [self.view addSubview:labelCaixa];
     
     double caixa = [[financa caixa] doubleValue];
-    UILabel *valorCaixa = [[UILabel alloc] initWithFrame:CGRectMake(100, 26, 90, 15)];
+    UILabel *valorCaixa = [[UILabel alloc] initWithFrame:CGRectMake(120, 26, 90, 15)];
     [valorCaixa setBackgroundColor:[UIColor clearColor]];
     [valorCaixa setTextColor:[UIColor whiteColor]];
-    [valorCaixa setFont:[UIFont systemFontOfSize:14]];
+    [valorCaixa setFont:[UIFont systemFontOfSize:16]];
     [valorCaixa setTextAlignment:NSTextAlignmentRight];
     [valorCaixa setText:[NSString stringWithFormat:@"%@%@", @"R$ ", [formatter stringFromNumber:[NSNumber numberWithDouble:caixa]]]];
     [self.view addSubview:valorCaixa];
     
 	// Total
-    UILabel *lineTotal = [[UILabel alloc] initWithFrame:CGRectMake(6, 45, 185, 1)];
+    UILabel *lineTotal = [[UILabel alloc] initWithFrame:CGRectMake(6, 45, 205, 1)];
     [lineTotal setBackgroundColor:[UIColor whiteColor]];
     [self.view addSubview:lineTotal];
 
     UILabel *labelTotal = [[UILabel alloc] initWithFrame:CGRectMake(6, 50, 120, 15)];
     [labelTotal setBackgroundColor:[UIColor clearColor]];
     [labelTotal setTextColor:[UIColor whiteColor]];
-    [labelTotal setFont:[UIFont boldSystemFontOfSize:14]];
+    [labelTotal setFont:[UIFont boldSystemFontOfSize:16]];
     [labelTotal setText:@"Saldo + Caixa:"];
     [self.view addSubview:labelTotal];
     
     double total = saldoAtual + caixa;
-    UILabel *valorTotal = [[UILabel alloc] initWithFrame:CGRectMake(100, 50, 90, 15)];
+    UILabel *valorTotal = [[UILabel alloc] initWithFrame:CGRectMake(120, 50, 90, 15)];
     [valorTotal setBackgroundColor:[UIColor clearColor]];
     [valorTotal setTextColor:[UIColor whiteColor]];
-    [valorTotal setFont:[UIFont boldSystemFontOfSize:14]];
+    [valorTotal setFont:[UIFont boldSystemFontOfSize:16]];
     [valorTotal setTextAlignment:NSTextAlignmentRight];
     [valorTotal setText:[NSString stringWithFormat:@"%@%@", @"R$ ", [formatter stringFromNumber:[NSNumber numberWithDouble:total]]]];
     [self.view addSubview:valorTotal];

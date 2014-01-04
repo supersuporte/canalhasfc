@@ -182,7 +182,6 @@
     [formatter setGroupingSeparator:@"."];
     [formatter setDecimalSeparator:@","];
     
-    
     [[view.subviews objectAtIndex:0] setImage:[produto imagem]];
     [[view.subviews objectAtIndex:1] setText:[produto nome]];
     [[view.subviews objectAtIndex:2] setText:[produto descricao]];
@@ -191,7 +190,6 @@
                                                      @"R$ ",
                                                      [formatter stringFromNumber:[NSNumber numberWithDouble:[[produto valor] doubleValue]]]]];
 }
-
 
 - (IBAction)produtoSeguinte:(id)sender
 {
