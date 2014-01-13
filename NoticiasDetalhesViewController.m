@@ -44,7 +44,7 @@
     
     CGFloat pos;
 
-    CGRect dimensoes = CGRectMake(0, 0, larguraDaTela, alturaDaTela-112);
+    CGRect dimensoes = CGRectMake(0, 0, larguraDaTela, alturaDaTela);
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:dimensoes];
     [scrollView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
     [self.view addSubview:scrollView];

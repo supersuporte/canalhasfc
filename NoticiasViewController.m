@@ -20,6 +20,9 @@
     NSMutableData *jsonData;
     
     UIActivityIndicatorView *activityIndicator;
+    
+    float larguraDaTela;
+    float alturaDaTela;
 }
 
 @end
@@ -45,7 +48,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-       
+
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+    {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+
+    larguraDaTela = [[UIScreen mainScreen] bounds].size.width;
+    alturaDaTela =  [[UIScreen mainScreen] bounds].size.height;
+
+    
     UIBarButtonItem *voltar = [[UIBarButtonItem alloc] initWithTitle:@"Voltar"
                                                        style:UIBarButtonItemStyleDone
                                                        target:self
@@ -149,9 +161,9 @@
 
 - (void)montaResultado
 {
-    noticiasTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, 457)];
+    noticiasTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, alturaDaTela-111)];
     [noticiasTableView setAllowsSelection:YES];
-    [noticiasTableView setBackgroundColor:[UIColor blackColor]];
+    [noticiasTableView setBackgroundColor:[UIColor clearColor]];
     [noticiasTableView setOpaque:YES];
     [noticiasTableView setBackgroundView:nil];
     [noticiasTableView setRowHeight:92];
@@ -186,6 +198,7 @@
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:cellIdentifier];
+        [cell setBackgroundColor:[UIColor clearColor]];
 
         UIImage *avImage = [UIImage imageNamed:@"setaDireita.png"];
         UIImageView *avImageView = [[UIImageView alloc] initWithImage:avImage];
@@ -214,9 +227,15 @@
         NSData *imgData = [NSData dataWithContentsOfURL:imgUrl];
         UIImage *img = [UIImage imageWithData:imgData];
         [imgView setImage:img];
+
+        UILabel *labelTexto = (UILabel *)[cell viewWithTag:2];
+        [labelTexto setFrame:CGRectMake(124, 5, 188, 78)];
     }
     else
     {
+        UIImageView *imgView = (UIImageView *)[cell viewWithTag:1];
+        [imgView setImage:nil];
+
         UILabel *labelTexto = (UILabel *)[cell viewWithTag:2];
         [labelTexto setFrame:CGRectMake(6, 6, 304, 78)];
     }
