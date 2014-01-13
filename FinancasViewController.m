@@ -65,9 +65,9 @@
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     
     NSDictionary *financasNCTitulo = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor yellowColor],
-                                      UITextAttributeTextColor,
+                                      NSForegroundColorAttributeName,
                                       [UIColor clearColor],
-                                      UITextAttributeTextShadowColor, nil];
+                                      NSShadowAttributeName, nil];
     
     [self.navigationController.navigationBar setTitleTextAttributes:financasNCTitulo];
     

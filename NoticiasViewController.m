@@ -71,9 +71,9 @@
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     
     NSDictionary *noticiasNCTitulo = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor yellowColor],
-                                      UITextAttributeTextColor,
+                                      NSForegroundColorAttributeName,
                                       [UIColor clearColor],
-                                      UITextAttributeTextShadowColor, nil];
+                                      NSShadowAttributeName, nil];
 
     [self.navigationController.navigationBar setTitleTextAttributes:noticiasNCTitulo];
 
