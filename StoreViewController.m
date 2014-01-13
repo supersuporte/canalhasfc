@@ -59,6 +59,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+    {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    
     larguraDaTela = [[UIScreen mainScreen] bounds].size.width;
     alturaDaTela = [[UIScreen mainScreen] bounds].size.height;
     
