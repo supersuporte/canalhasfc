@@ -43,6 +43,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+    {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    
     larguraDaTela = [[UIScreen mainScreen] bounds].size.width;
     alturaDaTela =  [[UIScreen mainScreen] bounds].size.height;
 
@@ -265,7 +271,7 @@
     
     atletasTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 99, larguraDaTela, alturaDaTela-211)];
     [atletasTableView setAllowsSelection:NO];
-    [atletasTableView setBackgroundColor:[UIColor blackColor]];
+    [atletasTableView setBackgroundColor:[UIColor clearColor]];
     [atletasTableView setOpaque:YES];
     [atletasTableView setBackgroundView:nil];
     [atletasTableView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
@@ -299,6 +305,7 @@
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:cellIdentifier];
+        [cell setBackgroundColor:[UIColor clearColor]];
         [cell.textLabel setTextColor:[UIColor whiteColor]];
         
         UIImageView *icoMesAnterior = [[UIImageView alloc] initWithFrame:CGRectMake(larguraDaTela-111, 14, 15, 15)];
