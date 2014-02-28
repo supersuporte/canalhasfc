@@ -220,13 +220,10 @@
 	}
     Noticia *noticia = [noticias objectAtIndex:[indexPath row]];
 
-    if (![[noticia imagem] isEqualToString:@""])
+    if ([noticia imagem] != nil)
     {
         UIImageView *imgView = (UIImageView *)[cell viewWithTag:1];
-        NSURL *imgUrl = [NSURL URLWithString:[noticia imagem]];
-        NSData *imgData = [NSData dataWithContentsOfURL:imgUrl];
-        UIImage *img = [UIImage imageWithData:imgData];
-        [imgView setImage:img];
+        [imgView setImage:[noticia imagem]];
 
         UILabel *labelTexto = (UILabel *)[cell viewWithTag:2];
         [labelTexto setFrame:CGRectMake(124, 5, 188, 78)];
@@ -252,13 +249,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [self.noticiasTableView cellForRowAtIndexPath:indexPath];
-    UIImage *imagem = [(UIImageView *)[cell viewWithTag:1] image];
-    
     Noticia *noticia = [noticias objectAtIndex:[indexPath row]];
     NoticiasDetalhesViewController *noticiasDetalhesViewController = [[NoticiasDetalhesViewController alloc]
-                                                                      initWithNoticia:noticia
-                                                                      eImagem:imagem];
+                                                                      initWithNoticia:noticia];
     [self.navigationController pushViewController:noticiasDetalhesViewController animated:YES];
 }
 

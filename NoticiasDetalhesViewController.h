@@ -11,6 +11,6 @@
 
 @interface NoticiasDetalhesViewController : UIViewController
 
-- (id)initWithNoticia:(Noticia *)noticia eImagem:(UIImage *)imagem;
+- (id)initWithNoticia:(Noticia *)noticia;
 
 @end

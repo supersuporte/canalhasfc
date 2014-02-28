@@ -11,7 +11,6 @@
 @interface NoticiasDetalhesViewController ()
 {
     Noticia *noticia;
-    UIImage *imagem;
     
     float larguraDaTela;
     float alturaDaTela;
@@ -21,10 +20,9 @@
 
 @implementation NoticiasDetalhesViewController
 
-- (id)initWithNoticia:(Noticia *)_noticia eImagem:(UIImage *)_imagem
+- (id)initWithNoticia:(Noticia *)_noticia
 {
     noticia = _noticia;
-    imagem = _imagem;
     
     self = [super initWithNibName:@"NoticiasDetalhesViewController" bundle:[NSBundle mainBundle]];
     
@@ -60,10 +58,10 @@
     [scrollView addSubview:titulo];
     pos = 5 + titulo.frame.size.height + 15;
     
-    if (![[noticia imagem] isEqual:@""])
+    if ([noticia imagem] != nil)
     {
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, pos, 300, 220)];
-        [imgView setImage:imagem];
+        [imgView setImage:[noticia imagem]];
         [scrollView addSubview:imgView];
         pos += imgView.frame.size.height+15;
     }

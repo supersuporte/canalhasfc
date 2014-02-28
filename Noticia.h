@@ -11,7 +11,7 @@
 @interface Noticia : NSObject
 
 @property (strong, nonatomic) NSDate *data;
-@property (strong, nonatomic) NSString *imagem;
+@property (strong, nonatomic) UIImage *imagem;
 @property (strong, nonatomic) NSString *titulo;
 @property (strong, nonatomic) NSString *texto;
 

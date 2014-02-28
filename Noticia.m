@@ -21,11 +21,13 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"dd/MM/yyyy"];
     [self setData:[dateFormatter dateFromString:dataSemFormatacao]];
-    
-    [self setImagem:[dicionario objectForKey:@"imagem"]];
     [self setTitulo:[dicionario objectForKey:@"titulo"]];
     [self setTexto:[dicionario objectForKey:@"texto"]];
-    
+
+    NSURL *imgUrl = [NSURL URLWithString:[dicionario objectForKey:@"imagem"]];
+    NSData *imgData = [NSData dataWithContentsOfURL:imgUrl];
+    [self setImagem:[UIImage imageWithData:imgData]];
+
     return self;
 }
 
